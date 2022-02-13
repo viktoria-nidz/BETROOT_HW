@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FORM</title>
+  </head>
+  <body>
+    <form
+      action="post"
+      id="my_form"
+      onsubmit="alert(decodeURI(new URLSearchParams
+    (Array.from(new FormData(document.getElementById('my_form')))).toString()));return false;"
+    >
+      <fieldset>
+        <legend>Загальні дані</legend>
+        <label for="block">Заблоковане поле</label>
+        <input
+          type="text"
+          name="block"
+          disabled
+          id="block"
+          placeholder="Попробуй поміняй"
+        />
+        <br />
+        <br />
+        <label for="text">Якийсь текст</label>
+        <input
+          type="text"
+          name="text"
+          id="text"
+          value="Попробуй зітри"
+          readonly
+        />
+        <br />
+        <br />
+        <label for="animal">Ім'я тваринки<em>*</em></label>
+        <input
+          type="text"
+          name="animal"
+          required
+          id="animal"
+          placeholder="Кіт Булька"
+        />
+        <br />
+        <br />
+        <label for="email">Ваш email</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="name@gmail.com"
+        />
+        <br />
+        <br />
+        <label for="password">Секретний пароль</label>
+        <input type="password" name="password" id="password" />
+        <br />
+        <br />
+        <label for="birth">День народження Пушкінка О.С.</label>
+        <input type="date" name="birth" id="birth" />
+        <br />
+        <br />
+        <label for="years">Вік дерева біля дому</label>
+        <input type="number" name="years" id="years" />
+        <br />
+        <br />
+        <label>Ваша підлога на кухні</label>
+        <input type="radio" name="radio_b" id="" />Ламінат
+        <input type="radio" name="radio_b" id="" />Плитка
+        <input type="radio" name="radio_b" id="" />Бетон
+        <br />
+        <br />
+        <label>Соціальні мережі</label>
+        <input type="checkbox" name="ins" id="" />Інста
+        <input type="checkbox" name="fac" id="" />Фейсбук
+        <input type="checkbox" name="tel" id="" />Тілєга
+        <input type="checkbox" name="link" id="" />Лінкін
+        <input type="checkbox" name="win" id="" />Вікно
+      </fieldset>
+
+      <fieldset>
+        <legend>Інша інформація</legend>
+        <label for="color">Улюблений колір сусіда</label>
+        <input type="color" name="color" id="color" />
+        <br />
+        <br />
+        <label for="tel">Номер для розваг</label>
+        <input type="tel" name="tel" id="tel" />
+        <br />
+        <br />
+        <label for="time">Година заннять</label>
+        <input type="time" name="time" id="time" />
+        <br />
+        <br />
+        <label for="link">Силочка на сайт</label>
+        <input
+          type="url"
+          name="url"
+          id="url"
+          placeholder="https://www.youtube.com/"
+        />
+        <br />
+        <br />
+        <label for="range">Число від 1 до 10</label>
+        <input type="range" min="1" max="10" name="range" id="range" />
+        <br />
+        <br />
+        <label for="file">Загрузи картиночку</label>
+        <input type="file" name="file" id="file" />
+      </fieldset>
+
+      <fieldset>
+        <legend>Не input</legend>
+        <label for="drinker">Улюблений напій</label>
+        <select name="drink" id="drinker" size="1">
+          <option value="" selected>-Вибери напій-</option>
+          <optgroup label="Безалкогольні напої">
+            <option value="01">Чай</option>
+            <option value="02">Кава</option>
+            <option value="03">Компот</option>
+            <option value="04">Сік</option>
+          </optgroup>
+          <optgroup label="Алкогольні напої">
+            <option value="11">Вино</option>
+            <option value="12">Ром</option>
+            <option value="13">Текіла</option>
+            <option value="14">Водка</option>
+            <option value="15">Джин</option>
+            <option value="16">Коньяк</option>
+          </optgroup>
+        </select>
+        <br />
+        <br />
+        <label for="drinki">Улюблені напої</label>
+        <select multiple name="drink[]" id="drinki" size="6">
+          <optgroup label="Безалкогольні напої">
+            <option value="01">Чай</option>
+            <option value="02">Кава</option>
+            <option value="03">Компот</option>
+            <option value="04">Сік</option>
+          </optgroup>
+          <optgroup label="Алкогольні напої">
+            <option value="11">Вино</option>
+            <option value="12">Ром</option>
+            <option value="13">Текіла</option>
+            <option value="14">Водка</option>
+            <option value="15">Джин</option>
+            <option value="16">Коньяк</option>
+          </optgroup>
+        </select>
+        <br />
+        <br />
+        <label for="coment">Ну що? Поговоримо?</label>
+        <textarea
+          name=""
+          id="coment"
+          cols="50"
+          rows="6"
+          maxlength="300"
+        ></textarea>
+      </fieldset>
+
+      <fieldset>
+        <legend>Кнопочки</legend>
+        <button type="submit">Відправляємо</button>
+        <button type="reset">Все дурня, давай по новій</button>
+        <button>Я кнопочка</button>
+        <button disabled>Цокнеш?</button>
+      </fieldset>
+    </form>
+
+  
+  </body>
+</html>

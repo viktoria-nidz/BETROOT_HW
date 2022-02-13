@@ -1,0 +1,47 @@
+.my-photo{
+    max-width: 250px;
+    max-height: 350px;
+    border-radius: 360px;
+    margin-left: 50px;
+}
+.blue-res{
+    background-color: rgba(30, 30, 128, 0.822);
+    color: cornsilk;
+    max-width: 350px;
+    display: inline-block;
+    flex-wrap: nowrap;
+    margin: 0px;
+}
+p{
+    margin: 20px;
+
+}
+h2, h6, h3, h4, h1, div, img, a{
+    margin: 20px;
+}
+a{
+    color:cornsilk;
+}
+.resume{
+    display:flex; 
+}
+.white-res{
+    background-color:cornsilk;
+    color: rgba(30, 30, 128, 0.822);
+    max-width: 850px;
+    display: inline-block;
+    flex-wrap: nowrap;
+    margin: 0px;
+}
+
+.desc{
+    font-weight: bold;
+    font-size: 20px;
+}
+li{
+    font-size: large;
+}
+.change{
+    color:brown;
+    font-weight: bold;
+}
