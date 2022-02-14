@@ -1,0 +1,160 @@
+body {
+  overflow: hidden;
+  margin: 0;
+}
+br {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: small;
+}
+.task {
+  width: 340px;
+  border: 3px dashed #663300;
+  padding: 10px 10px;
+  margin: 0;
+  float: left;
+  margin-right: 9px;
+  margin-left: 7px;
+  margin-top: 6px;
+  background-color: navajowhite;
+  box-shadow: 10px 10px#CC6633;
+}
+.task img {
+  width: 300px;
+  height: 200px;
+  padding-left: 25px;
+}
+.tasks {
+  width: 10000px;
+}
+a {
+  font-family: Gill Sans, sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+  color: #330000;
+  padding-left: 15px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.cake img:hover ~ .desc {
+  display: block;
+  background-color: navajowhite;
+}
+
+input {
+  display: none;
+}
+.cookie {
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.cookie label {
+  margin: 8px;
+}
+.co1::before,
+.co2::before,
+.co3::before,
+.co4::before,
+.co5::before {
+  font-family: "FontAwesome";
+  content: "\f563";
+  font-size: 40px;
+  color: rgb(228, 186, 124);
+  cursor: pointer;
+}
+#bot1:checked ~ .cookie .co1::before,
+#bot2:checked ~ .cookie .co2::before,
+#bot3:checked ~ .cookie .co3::before,
+#bot4:checked ~ .cookie .co4::before,
+#bot5:checked ~ .cookie .co5::before {
+  font-family: "FontAwesome";
+  content: "\f564";
+  font-size: 40px;
+  color: rgb(228, 186, 124);
+  cursor: pointer;
+}
+
+#bot1:checked ~ .tasks {
+  transition: 0.3s;
+  margin-left: 0px;
+}
+#bot2:checked ~ .tasks {
+  transition: 0.3s;
+  margin-left: -385px;
+}
+
+#bot3:checked ~ .tasks {
+  transition: 0.3s;
+  margin-left: -765px;
+}
+
+#bot4:checked ~ .tasks {
+  transition: 0.3s;
+  margin-left: -1145px;
+}
+
+#bot5:checked ~ .tasks {
+  transition: 0.3s;
+  margin-left: -1530px;
+}
+
+.strela::before {
+  font-family: "FontAwesome";
+  content: "\f054";
+  font-size: 60px;
+  color: rgb(201, 132, 29);
+  cursor: pointer;
+  margin-left: 27px;
+}
+.strel {
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 62%;
+  transform: translate(-50%, -50%);
+}
+
+.strela2::before {
+  font-family: "FontAwesome";
+  content: "\f053";
+  font-size: 60px;
+  color: rgb(201, 132, 29);
+  cursor: pointer;
+  margin-left: -500px;
+}
+.strel2 {
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 62%;
+  transform: translate(-50%, -50%);
+}
+
+#STRELKA1:checked ~ .tasks {
+  transition: 0.3s;
+  margin-left: -1530px;
+}
+
+#STRELKA2:checked ~ .tasks {
+  transition: 0.3s;
+  margin-left: 0px;
+}
+
+#STRELKA1:checked ~ .strel .strela::before {
+  opacity: 0;
+}
+
+#STRELKA2:checked ~ .strel .strela2::before {
+  opacity: 0;
+}
+
+#bot1:checked ~ .strel .strela2::before {
+  opacity: 0;
+}
+
+#bot5:checked ~ .strel .strela::before {
+  opacity: 0;
+}
