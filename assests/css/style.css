@@ -17,7 +17,13 @@ br {
   margin-top: 6px;
   background-color: navajowhite;
   box-shadow: 10px 10px#CC6633;
+  text-overflow: ellipsis;
 }
+
+.task h2 {
+  text-overflow: ellipsis;
+}
+
 .task img {
   width: 300px;
   height: 200px;

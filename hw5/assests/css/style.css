@@ -1,0 +1,165 @@
+*,
+::after,
+::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: all 0.1s ease-in;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: #3b3f45;
+  font-family: "Open Sans", sans-serif;
+  color: #ffffff;
+  font-size: 18px;
+  border: 15px solid white;
+}
+
+img {
+  width: 100%;
+  vertical-align: top;
+}
+
+.container {
+  width: 90%;
+  max-width: 793px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+#header {
+  height: 82px;
+  background-color: #4a4f56;
+  color: #ff8984;
+  margin-bottom: 20px;
+}
+
+#header h1 + p {
+  color: #ff8984;
+}
+
+#header p {
+  text-align: center;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 400;
+}
+
+#header h1 {
+  text-align: center;
+  margin-bottom: 4px;
+  padding-top: 19px;
+  line-height: 28px;
+  font-size: 24px;
+}
+
+ul li {
+  width: 100%;
+  max-width: 534px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 45px;
+  list-style-type: none;
+  text-align: left;
+  padding-left: 12px;
+  font-size: 18px;
+  transition: all 0.1s ease-in;
+}
+
+ul {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+[type="checkbox"] {
+  margin: 16px;
+}
+
+input[type="checkbox"]:checked + label::after {
+  display: block;
+  background-color: #9b96ac;
+}
+
+input[type="checkbox"]:checked + label {
+  color: #9b96ac;
+}
+
+small {
+  font-size: 11px;
+  vertical-align: middle;
+}
+
+label {
+  display: inline-block;
+  font-size: 18px;
+}
+
+label::after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: #ffffff;
+  display: none;
+  margin-top: -23px;
+  z-index: 1;
+  position: relative;
+}
+ul li:nth-child(odd) {
+  background-color: #88839e;
+}
+
+ul li:nth-child(even) {
+  background-color: #7a7593;
+}
+
+ul li:hover {
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+  background-color: #5e6174;
+}
+
+.list li {
+  padding: 8px 10px;
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+}
+
+.list li:hover {
+  border-color: white;
+}
+
+.list li:active {
+  background-color: #625e77;
+}
+
+small::before {
+  content: "  (";
+}
+small::after {
+  content: ")";
+}
+
+#footer {
+  width: 100%;
+  max-width: 534px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 45px;
+  text-align: left;
+  padding-left: 12px;
+  background-color: #4a4f56;
+  margin-top: 45px;
+}
+
+#footer h3 {
+  color: #ff8984;
+  font-weight: 400;
+  font-size: 18px;
+  text-align: center;
+}
