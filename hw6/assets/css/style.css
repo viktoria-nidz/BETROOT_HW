@@ -1,0 +1,127 @@
+*,
+::after,
+::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: all 0.1s ease-in;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: #3399cc;
+  border-top: 14px solid #2b81ac;
+  border-bottom: 14px solid #2b81ac;
+  border-left: 16px solid #2b81ac;
+  border-right: 16px solid #2b81ac;
+  font-family: "Roboto", sans-serif;
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.container {
+  width: 90%;
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+.cities {
+  font-size: 0;
+  background-color: #fff;
+  padding: 3px 3px 0 0;
+  margin-top: 97px;
+}
+.cities li {
+  list-style-type: none;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 0 0 3px 3px;
+  margin: 0;
+  letter-spacing: 0.05em;
+  height: 81px;
+  width: 25%;
+}
+
+li.w50 {
+  width: 50%;
+}
+
+li.w100 {
+  width: 100%;
+}
+
+li div {
+  height: 100%;
+  text-align: center;
+  padding-top: 16px;
+}
+
+.one div {
+  background-color: #3399cc;
+}
+
+.two div {
+  background-color: #33cccc;
+}
+
+.three div {
+  background-color: #996699;
+}
+
+.four div {
+  background-color: #c24747;
+}
+
+.five div {
+  background-color: #e2674a;
+}
+
+.six div {
+  background-color: #ffcc66;
+}
+
+.seven div {
+  background-color: #99cc99;
+}
+
+.eight div {
+  background-color: #669999;
+}
+
+.nine div {
+  background-color: #cc6699;
+}
+
+.ten div {
+  background-color: #339966;
+}
+
+.eleven div {
+  background-color: #666699;
+}
+
+div p.temp {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  margin-top: 5px;
+  line-height: 21px;
+}
+
+li {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 18.75px;
+  font-style: normal;
+  margin: 0;
+  padding-top: 2px;
+  letter-spacing: 0.05em;
+}
+.cities:hover li:not(:hover) {
+  opacity: 0.7;
+}
