@@ -166,3 +166,130 @@ header .btn {
 .btn_wrap2 img {
   padding-left: 31px;
 }
+
+.container.flex {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.tools_wrap {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 35px;
+}
+
+.tool img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 23px;
+}
+
+.tool h5 {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 33px;
+  color: #2f281e;
+  margin-bottom: 13px;
+}
+.tool p {
+  color: #544837;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 26px;
+  width: 240px;
+}
+.h3_wrap h3 {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 56px;
+  color: #2f281e;
+}
+
+.h3_wrap {
+  width: 539px;
+  text-align: center;
+  margin-bottom: 51px;
+}
+
+section {
+  margin-bottom: 103px;
+}
+
+.btn_wrap3 .btn {
+  padding: 0 33px;
+}
+
+.tool.flex {
+  display: flex;
+  flex-direction: column;
+  width: 240px;
+  align-content: space-between;
+}
+
+#footer {
+  width: 90%;
+  max-width: 1110px;
+  margin: 0 auto;
+  border-top: 1px solid rgba(188, 208, 229, 0.496913);
+}
+
+.list ul li {
+  list-style-type: none;
+  color: #544837;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 35px;
+}
+
+#footer .container.flex {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  flex-direction: row;
+  padding-top: 22px;
+  padding-bottom: 83px;
+}
+.list.l1 {
+  /* width: 72px; */
+  padding-right: 175px;
+  margin-left: 141px;
+}
+.list.l2 {
+  /* width: 131px; */
+  padding-right: 81px;
+}
+
+.btn_wrap4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#footer .container.first {
+  padding-top: 102px;
+  margin: 0 0;
+  width: 100%;
+}
+
+#footer .btn {
+  height: 39px;
+  padding: 0 15px;
+  line-height: 39px;
+  font-weight: 700;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+.inpt {
+  height: 48px;
+  width: 325px;
+  margin-bottom: 21px;
+  border-radius: 4px;
+  border-color: #bcd0e5;
+  border: 1px solid #bcd0e5;
+}
