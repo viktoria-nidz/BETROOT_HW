@@ -1,0 +1,111 @@
+*,
+::after,
+::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: all 0.1s ease-in;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: white;
+  font-family: "Roboto", sans-serif;
+  color: #000000;
+  font-size: 36px;
+  line-height: 48px;
+  font-weight: 400;
+}
+
+.container {
+  width: 90%;
+  max-width: 1840px;
+  margin: 0 auto;
+}
+
+#header li {
+  list-style-type: none;
+}
+#header ul li {
+  display: inline-block;
+}
+
+.container.flex {
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+}
+.flex .logo {
+  width: 243px;
+}
+.flex.menu {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex.menu .menu {
+  padding-left: 42px;
+}
+.menu {
+  /* padding-right: 781px;*/
+
+  font-size: 20px;
+  font-weight: normal;
+}
+#header {
+  margin-top: 13px;
+  margin-bottom: 60px;
+}
+
+#header a {
+  text-decoration: none;
+  color: #000000;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.pros {
+  list-style-type: none;
+}
+
+section {
+  margin-top: 18px;
+  width: 100%;
+}
+
+section li {
+  margin-bottom: 70px;
+}
+.pros li span {
+  font-family: "PT Sans", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 48px;
+}
+section p {
+  margin-bottom: 86px;
+  font-family: "PT Sans", sans-serif;
+
+  font-size: 36px;
+  font-weight: normal;
+  line-height: 48px;
+}
+section h2 {
+  margin-bottom: 49px;
+  font-family: "Roboto", sans-serif;
+  /* "PT Sans", sans-serif; */
+  text-transform: uppercase;
+  font-size: 36px;
+  font-weight: 900;
+  line-height: 48px;
+  letter-spacing: 0.04em;
+}
+
+code {
+  background-color: rgba(207, 207, 207, 0.5);
+}
