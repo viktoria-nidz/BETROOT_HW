@@ -1,0 +1,99 @@
+*,
+::after,
+::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: all 0.1s ease-in;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: white;
+  font-family: "Roboto", sans-serif;
+  color: #000000;
+  font-size: 36px;
+  line-height: 48px;
+  font-weight: 400;
+  max-width: 1920px;
+}
+
+.container {
+  max-width: 1200px;
+}
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+#header li {
+  list-style-type: none;
+}
+#header ul li {
+  display: inline-block;
+}
+
+.header.flex {
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+.flex .logo {
+  width: 243px;
+}
+.flex.menu {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex.menu .menu {
+  padding-left: 42px;
+}
+.menu {
+  font-size: 20px;
+  font-weight: normal;
+}
+#header {
+  margin-top: 18px;
+  margin-bottom: 60px;
+}
+
+#header .change {
+  text-decoration: none;
+  color: #000000;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+a {
+  color: #000000;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:link {
+  color: #000000;
+}
+
+a:visited {
+  color: #312e2e;
+}
+
+a:focus {
+  transform: scale(1.2);
+  text-decoration: underline;
+}
+
+a:hover {
+  transform: scale(1.2);
+  text-decoration: underline;
+}
+
+a:active {
+  color: #854545;
+}

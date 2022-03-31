@@ -1,0 +1,92 @@
+.pros {
+    list-style-type: none;
+  }
+  
+  section {
+    margin-top: 18px;
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+  section li {
+    margin-bottom: 70px;
+  }
+  .pros li span {
+    font-family: "PT Sans", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 48px;
+  }
+  section p {
+    margin-bottom: 62px;
+    font-family: "PT Sans", sans-serif;
+    width: 100%;
+    font-size: 36px;
+    font-weight: normal;
+    line-height: 48px;
+  }
+  section h2 {
+    margin-bottom: 49px;
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    font-size: 36px;
+    font-weight: 900;
+    line-height: 48px;
+    letter-spacing: 0.04em;
+  }
+  
+  code {
+    background-color: rgba(207, 207, 207, 0.5);
+  }
+  
+  main {
+    padding-top: 118px;
+    padding-left: 58px;
+    margin: 0 0;
+    width: calc(100% - 37.5%);
+    max-width: 1200px;
+  }
+  
+  aside h2 {
+    border-bottom: 1px #bfbfbf solid;
+    margin-bottom: 92px;
+    font-family: "Roboto", sans-serif;
+    color: #000000;
+    font-size: 36px;
+    line-height: 42px;
+    text-transform: uppercase;
+    padding-left: 108px;
+  }
+  
+  aside {
+    position: sticky;
+    width: 37.5%;
+    left: 0;
+    top: 113px;
+  }
+  .page-wrap {
+    display: flex;
+    position: relative;
+    align-items: flex-start;
+    background-image: url("/assets/images/bolt.png");
+    background-repeat: no-repeat;
+    background-size: 650px 675px;
+    background-attachment: fixed;
+    background-position: bottom right;
+  }
+  
+  sup {
+    font-weight: 400;
+    font-size: 21px;
+    margin-right: 22px;
+  }
+  
+  .black-line {
+    width: 80px;
+    height: 0;
+    padding-top: 21px;
+    border-top: 12px solid black;
+  }
+
+  
