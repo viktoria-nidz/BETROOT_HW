@@ -68,7 +68,11 @@ input {
 .co2::before,
 .co3::before,
 .co4::before,
-.co5::before {
+.co5::before,
+.co6::before,
+.co7::before
+
+ {
   font-family: "FontAwesome";
   content: "\f563";
   font-size: 40px;
@@ -79,7 +83,9 @@ input {
 #bot2:checked ~ .cookie .co2::before,
 #bot3:checked ~ .cookie .co3::before,
 #bot4:checked ~ .cookie .co4::before,
-#bot5:checked ~ .cookie .co5::before {
+#bot5:checked ~ .cookie .co5::before,
+#bot5:checked ~ .cookie .co6::before,
+#bot5:checked ~ .cookie .co7::before  {
   font-family: "FontAwesome";
   content: "\f564";
   font-size: 40px;
@@ -114,11 +120,11 @@ input {
 }
 #bot6:checked ~ .tasks {
   transition: 0.3s;
-  margin-left: -1910px;
+  margin-left: -1915px;
 }
 #bot7:checked ~ .tasks {
   transition: 0.3s;
-  margin-left: -2290px;
+  margin-left: -2300px;
 }
 
 .strela::before {
@@ -155,7 +161,7 @@ input {
 
 #STRELKA1:checked ~ .tasks {
   transition: 0.3s;
-  margin-left: -1530px;
+  margin-left: -2300px;
 }
 
 #STRELKA2:checked ~ .tasks {
