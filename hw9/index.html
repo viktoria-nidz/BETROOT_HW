@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/materialdesignicons.min.css" />
+    <link rel="stylesheet" href="assets/plugins/jquery.formstyler.css" />
+    <link rel="stylesheet" href="assets/plugins/jquery.formstyler.theme.css" />
+    <link rel="stylesheet" href="assets/css/font.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/profile-form.css" />
+    <link rel="stylesheet" href="assets/css/account-form.css" />
+    <title>FORMS</title>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <section>
+          <div class="form-container">
+            <form method="post" action="#" enctype="multipart/form-data">
+              <header class="header-form">
+                <div>Create an Account</div>
+              </header>
+              <main class="main-form">
+                <div class="input-flex-wrap">
+                  <div class="form_input small">
+                    <label for="name">First Name</label>
+                    <input tabindex="1" type="text" id="name" name="name" />
+                  </div>
+
+                  <div class="form_input small">
+                    <label for="last-name">Last Name</label>
+                    <input
+                      tabindex="2"
+                      type="text"
+                      id="last-name"
+                      name="last-name"
+                    />
+                  </div>
+                </div>
+
+                <div class="form_input big">
+                  <label for="email">E-mail</label>
+                  <input tabindex="3" type="email" id="email" name="email" />
+                  <div class="warning">
+                    We'll never share your email with anyone else.
+                  </div>
+                </div>
+
+                <div class="form_radio">
+                  <input
+                    tabindex="4"
+                    type="radio"
+                    name="gender"
+                    id="male"
+                    value="Male"
+                    checked
+                  />
+                  <label for="male"> Male</label>
+                  <div class="radio-right">
+                    <input
+                      tabindex="4"
+                      type="radio"
+                      id="female"
+                      name="gender"
+                      value="Female"
+                    />
+                    <label for="female">Female</label>
+                  </div>
+                </div>
+
+                <div class="input-flex-wrap">
+                  <div class="form_input small">
+                    <label for="country">Country</label>
+                    <select
+                      data-placeholder="Select"
+                      tabindex="5"
+                      name="country"
+                      id="country"
+                      value="Select"
+                    >
+                      <option></option>
+                      <option value="1">Україна</option>
+                      <option value="2">Польща</option>
+                      <option value="3">Франція</option>
+                      <option value="4">Італія</option>
+                      <option value="5">США</option>
+                      <option value="6">Австрія</option>
+                    </select>
+                  </div>
+
+                  <div class="form_input small">
+                    <label for="city">City</label>
+                    <input tabindex="6" type="text" id="city" name="city" />
+                  </div>
+                </div>
+
+                <button tabindex="7" class="button-form first" type="submit">
+                  Sign Up
+                </button>
+                <div class="warning after_button">
+                  By clicking the 'Sign Up' button, you confirm that you accept
+                  our <a href="#" target="_blank">Terms of Use</a> and
+                  <a href="#" target="_blank">Privacy Policy </a>.
+                </div>
+              </main>
+              <footer class="footer-form">
+                <div class="line"></div>
+                <div class="log_text">
+                  Have an account?<a href="#" target="_blank">Log in</a>
+                </div>
+              </footer>
+            </form>
+          </div>
+        </section>
+
+        <!-- SECOND FORM -->
+        <section>
+          <div class="form-container weight">
+            <form method="post" action="#" enctype="multipart/form-data">
+              <div class="profile">Profile</div>
+              <div class="upload-profile-photo">
+                <div class="upload-file-wrap">
+                  <div class="avatar-wrap">
+                    <img
+                      class="avatar"
+                      src="assets/images/avatar.png"
+                      alt="avatar"
+                    />
+                  </div>
+                  <div class="flex-wrap-upload">
+                    <div class="fake-file-wrap">
+                      <div class="fake-file">
+                        <i class="mdi mdi-camera"></i>
+                      </div>
+                      <input
+                        tabindex="1"
+                        name="myFile"
+                        type="file"
+                        accept="image/png, image/gif, image/jpeg"
+                      />
+                      <div class="rubbish">
+                        <i class="mdi mdi-delete"></i>
+                      </div>
+                    </div>
+                    <div class="warning up">Up to 1 MB (300x300 px)</div>
+                  </div>
+                </div>
+
+                <div class="input-flex-wrap">
+                  <div class="form_input small">
+                    <label for="name_is">Name</label>
+                    <input tabindex="2" type="text" id="name_is" name="name" />
+                  </div>
+                  <div class="form_input small">
+                    <label for="email_is">E-mail</label>
+                    <input
+                      tabindex="3"
+                      type="email"
+                      id="email_is"
+                      name="email"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="input-flex-wrap">
+                <div class="form_input small">
+                  <label for="country_is">Country</label>
+                  <select
+                    tabindex="4"
+                    data-placeholder="Select"
+                    name="country"
+                    id="country_is"
+                    value="Select"
+                  >
+                    <option></option>
+                    <option value="1">Україна</option>
+                    <option value="2">Польща</option>
+                    <option value="3">Франція</option>
+                    <option value="4">Італія</option>
+                    <option value="5">США</option>
+                    <option value="6">Австрія</option>
+                  </select>
+                </div>
+
+                <div class="form_input small">
+                  <label for="city_is">City</label>
+                  <input tabindex="5" type="text" id="city_is" name="city" />
+                </div>
+              </div>
+
+              <div class="input-flex-wrap">
+                <div class="form_input small">
+                  <label for="zip">Zip Code</label>
+                  <input tabindex="6" type="text" id="zip" name="zip-code" />
+                </div>
+
+                <div class="form_input small">
+                  <label for="phone-number">Phone Number</label>
+                  <input
+                    tabindex="7"
+                    type="tel"
+                    id="phone-number"
+                    name="phone-number"
+                  />
+                </div>
+              </div>
+
+              <button tabindex="8" class="button-form second" type="submit">
+                Update
+              </button>
+            </form>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/plugins/jquery.formstyler.min.js"></script>
+    <script>
+      (function ($) {
+        $(function () {
+          $('input [type ="file"], select').styler();
+        });
+      })(jQuery);
+    </script>
+  </body>
+</html>

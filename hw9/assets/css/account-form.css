@@ -1,0 +1,105 @@
+
+.main-form,
+.header-form,
+.footer-form{
+    width: 100%;
+}
+.header-form div{
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -0.4px;
+    color: #000000;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    }
+
+.form_radio label{
+    padding-left: 10px;
+    }
+    
+    .warning{
+        font-size: 13px;
+        padding-bottom: 4px;
+    }
+    
+    .form_radio {
+    padding-bottom: 9px;
+    padding-left: 20px;
+    
+    }
+    
+    input[type=radio]{
+        opacity: 0;
+    }
+    input[type=radio]+label{
+        position: relative;
+        display: inline-block;
+    }
+    input[type=radio]+label:before{
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border:1px #E4E4E4 solid;
+    position: absolute;
+    top:0;
+    left:-17px;
+    z-index: 1;
+    }
+    
+    .radio-right{
+        display: inline-block;
+        padding-left: 18px;
+    }
+    
+    input[type=radio]+label:after{
+        content: "";
+        box-sizing: border-box;
+        opacity: 0;
+        display: block;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border:6px  #007BFF solid;
+        background-color:  #ffffff;
+        position: absolute;
+        top:0;
+        left:-17px;
+        z-index: 2;
+        }
+        input[type=radio]:checked+label:after{
+            opacity: 1;
+        }
+    
+        .button-form.first{
+            width: 500px;
+        }
+    
+        .after_button{
+            width: 410px;
+            text-align: center;
+            margin: 0 auto;
+            margin-bottom: 11px;
+        }
+    
+        .line{
+            width: 500px;
+            border: 1px #E4E4E4 solid;
+            margin-left: 20px;
+            background-color: #E4E4E4 ;
+            margin-bottom: 20px;
+        }
+    
+        .log_text{
+            width: 173px;
+            text-align: center;
+            margin: 0 auto;
+            padding-bottom: 31px; 
+        }
+
+        .log_text a{
+            font-weight: 600;
+        }
