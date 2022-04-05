@@ -173,7 +173,8 @@ input {
   opacity: 0;
 }
 
-#STRELKA2:checked ~ .strel .strela2::before {
+#STRELKA2:checked ~ .strel .strela2::before,
+#STRELKA22:checked ~ .strel .strela22::before{
   opacity: 0;
 }
 
@@ -184,3 +185,4 @@ input {
 #bot7:checked ~ .strel .strela::before {
   opacity: 0;
 }
+
