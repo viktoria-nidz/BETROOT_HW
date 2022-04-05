@@ -124,7 +124,7 @@ input {
 }
 #bot7:checked ~ .tasks {
   transition: 0.3s;
-  margin-left: -2300px;
+  margin-left: -2685px;
 }
 
 .strela::before {
@@ -161,7 +161,7 @@ input {
 
 #STRELKA1:checked ~ .tasks {
   transition: 0.3s;
-  margin-left: -2300px;
+  margin-left: -2685px;
 }
 
 #STRELKA2:checked ~ .tasks {
