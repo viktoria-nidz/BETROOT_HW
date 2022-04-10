@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assests/css/hamburger.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -14,6 +15,19 @@
     <title>MAKET</title>
   </head>
   <body>
+    <div id="side-block">
+      <div class="wrapper">
+        <nav id="mobile-menu">
+          <ul>
+            <li><a class="active" href="#">Home</a></li>
+            <li><a href="#">About me</a></li>
+            <li><a href="#">Skills</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Contacts</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
     <header id="header">
       <div class="container">
         <nav id="main-menu">
@@ -25,13 +39,24 @@
             <li><a href="#">Contacts</a></li>
           </ul>
         </nav>
+        <div class="hamb-menu">
+          <button class="hamburger hamburger--spring-r" type="button">
+            <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+            </span>
+          </button>
+        </div>
       </div>
     </header>
 
     <section class="first_screen white">
       <div class="container">
         <h1>Denis Novik</h1>
-        <img src="assests/images/DenisNovik.jpg" alt=" Denis Novik" />
+        <img
+          class="avatar"
+          src="assests/images/DenisNovik.jpg"
+          alt=" Denis Novik"
+        />
       </div>
     </section>
 
@@ -60,10 +85,10 @@
           <h2>Skills</h2>
           <p class="desc">I work in such programs as</p>
           <div class="images">
-            <img src="assests/images/Ps.jpg" alt="Adobe Ph" />
-            <img src="assests/images/Ai.jpg" alt="Adobe Ai" />
-            <img src="assests/images/Ae.jpg" alt="Adobe Ae" />
-            <img src="assests/images/figma.jpg" alt="Figma" />
+            <div><img src="assests/images/Ps.jpg" alt="Adobe Ph" /></div>
+            <div><img src="assests/images/Ai.jpg" alt="Adobe Ai" /></div>
+            <div><img src="assests/images/Ae.jpg" alt="Adobe Ae" /></div>
+            <div><img src="assests/images/figma.jpg" alt="Figma" /></div>
           </div>
         </div>
       </div>
@@ -74,7 +99,10 @@
       <div class="content3">
         <h2>Portfolio</h2>
         <figure>
-          <img src="assests/images/portfolio.jpg" alt="fashion store" />
+          <div>
+            <img src="assests/images/portfolio.jpg" alt="fashion store" />
+          </div>
+
           <figcaption>
             <a
               class="figcaption"
@@ -93,7 +121,10 @@
       <div class="container"></div>
       <div class="content3">
         <figure>
-          <img src="assests/images/reebok_web.jpg" alt="reebok web" />
+          <div>
+            <img src="assests/images/reebok_web.jpg" alt="reebok web" />
+          </div>
+
           <figcaption>
             <a
               class="figcaption"
@@ -111,10 +142,13 @@
       <div class="container"></div>
       <div class="content3">
         <figure>
-          <img
-            src="assests/images/camera.jpg"
-            alt="Braun Landing Page - Concept"
-          />
+          <div>
+            <img
+              src="assests/images/camera.jpg"
+              alt="Braun Landing Page - Concept"
+            />
+          </div>
+
           <figcaption>
             <a
               class="figcaption"
@@ -163,5 +197,19 @@
         </div>
       </div>
     </footer>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(function () {
+        $(".hamburger").on("click", function () {
+          $(".hamburger").toggleClass("is-active");
+          $("#side-block").toggleClass("open");
+        });
+      });
+    </script>
   </body>
 </html>
