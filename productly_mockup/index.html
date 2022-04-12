@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -10,10 +11,23 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/style.min.css" />
     <title>Productly</title>
   </head>
   <body>
+    <div id="side_block">
+      <div class="wrapper">
+        <nav>
+          <ul class="mobile_menu">
+            <li><a href="#">Product</a></li>
+
+            <li><a href="#"> Customers</a></li>
+            <li><a href="#">Pricng</a></li>
+            <li><a href="#">Resources</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
     <header id="header">
       <div class="container clearfix">
         <div class="logo">
@@ -34,12 +48,19 @@
             <li><a href="#">Resources</a></li>
           </ul>
         </nav>
+        <div class="hamb-menu">
+          <button class="hamburger hamburger--collapse" type="button">
+            <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+            </span>
+          </button>
+        </div>
       </div>
     </header>
 
     <main>
-      <section>
-        <div class="container clearfix">
+      <section class="tl">
+        <div class="container clearfix fFlex">
           <div class="text_wrap">
             <div class="content_h2">
               <h2>The Design Thinking superpowers</h2>
@@ -52,14 +73,18 @@
                 experience.
               </p>
             </div>
+
+            <div class="btn_wrap2">
+              <button class="btn orange">Get started</button>
+              <div class="play">
+                <img src="assets/images/Triangle.svg" alt="triangle" />
+              </div>
+              <button class="btn new_orange">Watch the Video</button>
+            </div>
           </div>
+
           <div class="img_wrap">
             <img src="assets/images/people.png" alt="people happy" />
-          </div>
-          <div class="btn_wrap2">
-            <button class="btn orange">Get started</button>
-            <img src="assets/images/Triangle.svg" alt="triangle" />
-            <button class="btn new_orange">Watch the Video</button>
           </div>
         </div>
       </section>
@@ -71,30 +96,25 @@
           </div>
           <div class="tools_wrap">
             <div class="tool">
-              <img src="assets/images/icon.png" alt="first click icon" />
+              <div class="icon1"><span class="icon-mouse-pointer"></span></div>
               <h5>First click tests</h5>
               <p class="tool_p">While most people enjoy casino gambling,</p>
             </div>
             <div class="tool">
-              <img src="assets/images/icon (1).png" alt="design surveys icon" />
+              <div class="icon2"><span class="icon-stumbleupon"></span></div>
               <h5>Design surveys</h5>
               <p class="tool_p">
                 Sports betting, lottery and bingo playing for the fun
               </p>
             </div>
-            <div class="tool flex">
-              <img
-                src="assets/images/icon (2).png"
-                alt="preference test icon"
-              />
+            <div class="tool">
+              <div class="icon3"><span class="icon-heart"></span></div>
               <h5>Preference tests</h5>
               <p class="tool_p">The Myspace page defines the individual.</p>
             </div>
             <div class="tool">
-              <img
-                src="assets/images/icon (3).png"
-                alt="five second test icon"
-              />
+              <div class="icon4"><span class="icon-hourglass-2"></span></div>
+
               <h5>Five second tests</h5>
               <p class="tool_p">
                 Personal choices and the overall personality of the person.
@@ -103,6 +123,103 @@
           </div>
           <div class="btn_wrap3">
             <button class="btn orange">SIGN UP NOW</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="img-r-first">
+        <div class="container img right">
+          <div class="text-wrap">
+            <div class="sup-title">Effortless Validation for</div>
+            <h3>Design Professionals</h3>
+            <p class="under-title">
+              The Myspace page defines the individual, his or her
+              characteristics, traits, personal choices and the overall
+              personality of the person.
+            </p>
+            <h5>Accessory makers</h5>
+            <p>
+              While most people enjoy casino gambling, sports betting, lottery
+              and bingo playing for the fun
+            </p>
+            <h5>Alterationists</h5>
+            <p>
+              If you are looking for a new way to promote your business that
+              won’t cost you more money,
+            </p>
+            <h5>Custom Design designers</h5>
+            <p>
+              If you are looking for a new way to promote your business that
+              won’t cost you more money,
+            </p>
+          </div>
+
+          <div class="img-wrap man1">
+            <img src="assets/images/man1.png" alt="decign man" />
+          </div>
+        </div>
+      </section>
+
+      <section class="img-l-first">
+        <div class="container img left">
+          <div class="img-wrap man2">
+            <img src="assets/images/man2.png" alt="prodject manager man" />
+          </div>
+          <div class="text-wrap relative">
+            <div class="sup-title">Easier decision making for</div>
+            <h3>Product Managers</h3>
+            <p class="under-title">
+              The Myspace page defines the individual, his or her
+              characteristics, traits, personal choices and the overall
+              personality of the person.
+            </p>
+
+            <p class="done first">
+              Never worry about overpaying for your<br />
+              energy again.
+            </p>
+            <p class="done second">
+              We will only switch you to energy companies<br />
+              that we trust and will treat you right
+            </p>
+
+            <p class="done third">
+              We track the markets daily and know where the<br />
+              savings are.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="img-r-second">
+        <div class="container img right">
+          <div class="text-wrap">
+            <div class="sup-title">Optimisation for</div>
+            <h3>Marketers</h3>
+            <p class="under-title">
+              Few would argue that, despite the advancements of feminism over
+              the past three decades, women still face a double standard when it
+              comes to their behavior.
+            </p>
+            <h5>Accessory makers</h5>
+            <p>
+              While most people enjoy casino gambling, sports betting, lottery
+              and bingo playing for the fun
+            </p>
+            <h5>Alterationists</h5>
+            <p>
+              If you are looking for a new way to promote your business that
+              won’t cost you more money,
+            </p>
+            <h5>Custom Design designers</h5>
+            <p>
+              If you are looking for a new way to promote your business that
+              won’t cost you more money,
+            </p>
+          </div>
+
+          <div class="img-wrap man3">
+            <img src="assets/images/man3.png" alt="marketers man" />
           </div>
         </div>
       </section>
@@ -144,6 +261,20 @@
           </div>
         </div>
       </div>
+
+      <script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"
+      ></script>
+      <script>
+        $(function () {
+          $(".hamburger").on("click", function () {
+            $(".hamburger").toggleClass("is-active");
+            $("#side_block").toggleClass("open");
+          });
+        });
+      </script>
     </footer>
   </body>
 </html>
