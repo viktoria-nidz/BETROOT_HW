@@ -3,7 +3,10 @@
 ::before {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: all 0.1s ease-in;
+  -o-transition: all 0.1s ease-in;
   transition: all 0.1s ease-in;
 }
 html,
@@ -34,7 +37,8 @@ main .container {
 
 .form-container{
     max-width: 540px;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     background-color: #FFFFFF;
     /* background-color: #dcdcdc; */
 }
@@ -44,7 +48,8 @@ main .container {
 .form_input select 
 {
     border: 1px solid #E4E4E4;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     border-radius: 6px;
 }
 
@@ -69,8 +74,12 @@ label{
 }
 
 .container{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     padding-top: 50px;
 }
 .form_input label{
@@ -78,8 +87,14 @@ label{
 }
 .input-flex-wrap{
 
+    display: -webkit-box;
+
+    display: -ms-flexbox;
+
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 20px;
@@ -109,7 +124,8 @@ input[type=select]:focus,
 input[type=email]:focus{
     outline: none;
     border: 2px solid #007BFF;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     border-radius: 6px;
 }
 form a{
@@ -123,7 +139,8 @@ form a:hover{
    
     background-color: #007BFF;
     border: 1px solid #007BFF;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     border-radius: 6px;
     height: 38px;
     color: #FFFFFF;
@@ -142,11 +159,13 @@ form a:hover{
     width: 245px;
 	padding: 2px 45px 0 10px;
 	border:  1px solid #E4E4E4;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     border-radius: 6px;
 	border-bottom-color: #E4E4E4;
 	background: #FFFFFF;
-	box-shadow: none;
+	-webkit-box-shadow: none;
+	        box-shadow: none;
 	font: 15px/32px 'Inter', sans-serif;
 	color: #545454;
 	text-shadow: none;
@@ -156,21 +175,25 @@ form a:hover{
 	background:#FFFFFF;
     outline: none;
     border: 2px solid #007BFF;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     border-radius: 6px;
 }
 .jq-selectbox__select:active {
 	background:#FFFFFF;;
-	box-shadow: none;
+	-webkit-box-shadow: none;;
+	        box-shadow: none;
     outline: none;
     border: 2px solid #007BFF;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     border-radius: 6px;
 }
 .jq-selectbox.focused .jq-selectbox__select {
     outline: none;
     border: 2px solid #007BFF;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     border-radius: 6px;
 }
 

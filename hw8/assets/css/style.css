@@ -3,7 +3,10 @@
 ::before {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: all 0.1s ease-in;
+  -o-transition: all 0.1s ease-in;
   transition: all 0.1s ease-in;
 }
 html,
@@ -38,17 +41,26 @@ header {
 }
 
 .header.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 90%;
   margin: 0 auto;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 .flex .logo {
   width: 243px;
 }
 .flex.menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 .flex.menu .menu {
@@ -85,12 +97,16 @@ a:visited {
 }
 
 a:focus {
-  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+          transform: scale(1.2);
   text-decoration: underline;
 }
 
 a:hover {
-  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+          transform: scale(1.2);
   text-decoration: underline;
 }
 

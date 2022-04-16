@@ -20,12 +20,15 @@ br {
   margin-left: 7px;
   margin-top: 6px;
   background-color: navajowhite;
-  box-shadow: 10px 10px #CC6633;
-  text-overflow: ellipsis;
+  -webkit-box-shadow: 10px 10px #CC6633;
+          box-shadow: 10px 10px #CC6633;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
 }
 
 .task h2 {
-  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
 }
 
 .task img {
@@ -59,7 +62,9 @@ input {
   z-index: -1;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 .cookie label {
   margin: 8px;
@@ -96,33 +101,47 @@ input {
 
 
 #bot1:checked ~ .tasks {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
   transition: 0.3s;
   margin-left: 0px;
 }
 #bot2:checked ~ .tasks {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
   transition: 0.3s;
   margin-left: -385px;
 }
 
 #bot3:checked ~ .tasks {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
   transition: 0.3s;
   margin-left: -765px;
 }
 
 #bot4:checked ~ .tasks {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
   transition: 0.3s;
   margin-left: -1145px;
 }
 
 #bot5:checked ~ .tasks {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
   transition: 0.3s;
   margin-left: -1530px;
 }
 #bot6:checked ~ .tasks {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
   transition: 0.3s;
   margin-left: -1915px;
 }
 #bot7:checked ~ .tasks {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
   transition: 0.3s;
   margin-left: -4000px;
 }
@@ -140,7 +159,9 @@ input {
   z-index: -1;
   top: 50%;
   left: 62%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .strela2::before {
@@ -156,15 +177,21 @@ input {
   z-index: -1;
   top: 50%;
   left: 62%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 #STRELKA1:checked ~ .tasks {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
   transition: 0.3s;
   margin-left: -2685px;
 }
 
 #STRELKA2:checked ~ .tasks {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
   transition: 0.3s;
   margin-left: 0px;
 }

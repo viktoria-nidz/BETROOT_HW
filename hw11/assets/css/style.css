@@ -2,6 +2,7 @@ html,
 body {
   height: 100%;
   width: 100%;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -51,18 +52,28 @@ main .second-text {
 }
 main .cards-wrap {
   width: 1155px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding-bottom: 69px;
 }
 main .cards-wrap .card {
   width: 360px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   border: 1px #EFEEF3 solid;
   border-radius: 8px;
   padding-top: 34px;
   padding-left: 41px;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 main .cards-wrap .card:hover {
@@ -79,8 +90,14 @@ main .cards-wrap .card .icon {
   border-radius: 16px;
   width: 64px;
   height: 64px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   margin-bottom: 28px;
 }
@@ -136,7 +153,11 @@ footer .logo {
 }
 footer .networks-wrap {
   width: 222px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding-bottom: 45px;
 }
@@ -145,15 +166,20 @@ footer .networks-wrap .network {
   width: 38px;
   height: 38px;
   border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 footer .networks-wrap .network svg {
   height: 20px;
   width: 20px;
   padding-top: 4px;
-  fill: black;
 }
 footer .networks-wrap .network svg:hover {
   fill: #3DB370;
