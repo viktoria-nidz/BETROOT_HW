@@ -8,7 +8,7 @@ if (document.readyState !== 'loading' ) {
 function lazyLoad() {
     var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
     var lazyBackgrounds = [].slice.call(document.querySelectorAll(".lazy-bg"));
-​
+
     if ("IntersectionObserver" in window) {
         // lazy images
         var lazyImageObserver = new IntersectionObserver(function(entries, observer) {
@@ -27,7 +27,7 @@ function lazyLoad() {
         lazyImages.forEach(function(lazyImage) {
             lazyImageObserver.observe(lazyImage);
         });
-​
+
         // lazy backgrounds
         var lazyBackgroundObserver = new IntersectionObserver(function(entries, observer) {
             entries.forEach(function(entry) {
