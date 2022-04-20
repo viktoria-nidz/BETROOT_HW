@@ -137,13 +137,13 @@ input {
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
-  margin-left: -1915px;
+  margin-left: -3000px;
 }
 #bot7:checked ~ .tasks {
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
-  margin-left: -4000px;
+  margin-left: -5000px;
 }
 
 .strela::before {
