@@ -8,6 +8,17 @@ $border-color:#EFEEF3;
     line-height: $line-h;
     text-transform: $text-t;
   }
+  *,
+::after,
+::before {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.1s ease-in;
+  -o-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
 html,
 body {
   height: 100%;
@@ -27,12 +38,13 @@ body {
     width: 100%;
     max-width: 1155px;
     margin: 0 auto;
+ 
   } 
   
 
 
 header{
-    
+
     margin-top: 38px;
     margin-bottom: 55px;
     border-bottom: 1px $border-color solid;
@@ -44,6 +56,7 @@ width: 188px;
 }
 
 main {
+
   margin: 0 auto;
   .first-text{
    @include font-styles(#7690A8,Roboto,400,16px,21px,none);
@@ -54,7 +67,7 @@ main {
     margin-bottom: 35px;
   }
   .cards-wrap{
-width: 1155px;
+max-width: 1155px;
 display: -webkit-box;
 display: -ms-flexbox;
 display: flex;
@@ -82,9 +95,10 @@ padding-bottom: 69px;
     }
     &.green{
         &:hover{
-            border: 1px $border-color solid; 
+            border: 1px #3DB370 solid; 
         }
-        border: 1px #3DB370 solid; 
+        border: 1px $border-color solid; 
+        
     }
     .icon{
         border:1px rgba(21, 101, 216, 0.1) solid;
@@ -142,40 +156,34 @@ footer{
         padding-top: 36px;
         padding-bottom: 36px;
     }
-    .networks-wrap{
-        width: 222px;
-        display: -webkit-box;
-        display: -ms-flexbox;
+     .icons-wrap ul{
+         list-style-type: none;
+        max-width: 222px;
         display: flex;
-        -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-                justify-content: space-between;
+        justify-content: space-between;
+        flex-direction:row;
+        align-items: center;
         padding-bottom: 45px;
-        .network{
-            background-color: #EFEEF3;
+        li{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color:#EFEEF3;
+            border-radius: 5px;
+            a{
+                padding-top: 9px;
+                text-align: center;
             width: 38px;
             height: 38px;
-            border-radius: 5px;
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-align: center;
-                -ms-flex-align: center;
-                    align-items: center;
-            -webkit-box-pack: center;
-                -ms-flex-pack: center;
-                    justify-content: center;
-             svg{
-                 height: 20px;
-                 width: 20px;
-                 padding-top: 4px;
-                 
-                 &:hover{
-                    //  ЧОГО FILL НЕ ПРАЦЮЄ?
-                     fill:#3DB370;
-                     stroke: #3DB370;
-                 }
-             }
+           text-decoration: none;
+            color:black;
+            font-weight: 500;
+            font-size: 22px;
+            &:hover{
+                color:#3DB370;
+            }
+            }
         }
     }
 }
+    
