@@ -18,6 +18,18 @@
     border:$border-w $color solid;
     border-radius: $border-r;
   }
+  *,
+::after,
+::before {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.1s ease-in;
+  -o-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+
   
 html,
 body {
@@ -108,7 +120,7 @@ display: flex;
     -ms-flex-pack: justify;
         justify-content: space-between;
 
-    &__avatar-wrap {
+    &__avatar--wrap {
         position: relative;
         margin-top: 65px;
      
@@ -132,50 +144,6 @@ display: flex;
     }
 
 
-    &__triangle--topL {
-        position: absolute;
-        top: 0;
-        left: 0;
-        border-top: 1px solid $gold-color;
-        border-left: 1px solid $gold-color;
-        height: 100px;
-        width: 100px;
-    }
-
-
-    &__triangle--botmL {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        border-bottom: 1px solid $gold-color;
-        border-left: 1px solid $gold-color;
-        height: 100px;
-        width: 100px;
-    }
-
-
-    &__triangle--topR {
-        position: absolute;
-        top:0;
-        right: 0;
-        border-top: 1px solid $gold-color;
-        border-right: 1px solid $gold-color;
-        height: 100px;
-        width: 100px;
-    }
-
-
- 
-
-    &__triangle--botmR {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        border-bottom: 1px solid $gold-color;
-        border-right: 1px solid $gold-color;
-        height: 100px;
-        width: 100px;
-    }
 
    
 
@@ -212,99 +180,55 @@ display: flex;
         margin-bottom: 30px; 
     }
 
-    &__networks {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-pack:center;
-            -ms-flex-pack:center;
-                justify-content:center;
-        
+    &__networks  {
+    
       width: 100%;
       height: 30px;
       margin-bottom: 49px; 
-
+ul{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    list-style-type: none;
+    li a{
+        width: 30px;
+        height: 30px;
+        :hover{
+            fill:#333333;
+        }
+    }
+}
     }
 
-    &__network01 {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-align: center;
-            -ms-flex-align: center;
-                align-items: center;
-        -webkit-box-pack: center;
-            -ms-flex-pack: center;
-                justify-content: center;
+    &__network {
+       
         margin-left: 5px;
        @include circle-network (#CCCCCC, 30px, 30px, 2px, 50%);
        svg{
-        
-height: 15px;
+           margin-top: 3px;
+          margin-left: 2px;
+height: 12px;
+width: 20px;
         fill:#CCCCCC;
+        margin-top: 6px;
+     
     }
+    .google{
+        height: 18px;
+        width: 19px;
+        font-size: 30px;
+        margin-top: 4px;
     }
-
-    &__network02 {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-align: center;
-            -ms-flex-align: center;
-                align-items: center;
-        -webkit-box-pack: center;
-            -ms-flex-pack: center;
-                justify-content: center;
-        margin-left: 5px;
-        @include circle-network (#CCCCCC, 30px, 30px, 2px, 50%);
-        svg{
-            width: 16px;
-           
-            fill:#CCCCCC;
-        }
-    }
-
-    &__network03 {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-align: center;
-            -ms-flex-align: center;
-                align-items: center;
-        -webkit-box-pack: center;
-            -ms-flex-pack: center;
-                justify-content: center;
-        margin-left: 5px;
-        @include circle-network (#CCCCCC, 30px, 30px, 2px, 50%);
-        svg{
-            width: 23px;
-           
-            fill:#CCCCCC;
-        }
-    }
-
-    &__network04 {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-align: center;
-            -ms-flex-align: center;
-                align-items: center;
-        -webkit-box-pack: center;
-            -ms-flex-pack: center;
-                justify-content: center;
-        margin-left: 5px;
-        @include circle-network (#CCCCCC, 30px, 30px, 2px, 50%);
-        svg{
-            width: 12px;
-            height: 12px;
-            fill:#CCCCCC;
-        }
     }
 
     &__text {
         margin-bottom: 20px;
     }
+
 
  
     &__prgh {
@@ -324,13 +248,13 @@ height: 15px;
     }
 
   
-    &__line-small {
+    &__line--small {
         border-bottom: 4px solid $gold-color;
         width: 10px;
     }
 
   
-    &__line-big {
+    &__line--big {
         border-bottom: 4px solid $gold-color;
         width: 20px;
     }
@@ -348,5 +272,68 @@ height: 15px;
         width: 118px;
         height: 24px;
         margin: 0 auto;
+    }
+}
+
+
+
+
+.info__networks{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+
+
+.person__avatar{
+    position: relative;
+    ::before{
+        content: "";
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        left: 0;
+        top:0;
+        border-top: 1px $gold-color solid;
+        border-left: 1px $gold-color solid;
+    }
+    ::after{
+        content: "";
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        left: 330px;
+        top:0;
+        border-top: 1px $gold-color solid;
+        border-right: 1px $gold-color solid; 
+    }
+}
+
+.person__avatar--wrap{
+    position: relative;
+    ::before{
+        content: "";
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        left: 0;
+        top:329px;
+        border-bottom: 1px $gold-color solid;
+        border-left: 1px $gold-color solid;
+        border-top: none;
+    }
+    ::after{
+        content: "";
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        left: 329px;
+        top:330px;
+        border-bottom: 1px $gold-color solid;
+        border-right: 1px $gold-color solid; 
+        border-top: none;
     }
 }
