@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 Disallow: admin/
-Sitemap: https://viktoria-nidz.github.io/BETROOT_HW/productly_mockup/index.html
+Sitemap: https://www.xml-sitemaps.com/download/viktoria-nidz.github.io-4954e23dd/sitemap.xml?view=1
 Host:viktoria-nidz.github.io
