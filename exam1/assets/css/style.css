@@ -486,15 +486,15 @@ header .container nav ul li a:hover {
 .country {
   background-repeat: no-repeat;
   background-size: cover;
-  padding-top: 215px;
-  padding-bottom: 85px;
+  padding-top: 227px;
+  padding-bottom: 99px;
 }
 .country .block-wrap {
   padding: 50px 32px 50px 32px;
   background-color: #232323e9;
   width: 49%;
 }
-.country .block-wrap .country {
+.country .block-wrap .country-name {
   font-size: 20px;
   letter-spacing: 1.5px;
   padding-bottom: 23px;
