@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: admin/
-Sitemap: https://www.xml-sitemaps.com/download/viktoria-nidz.github.io-a25434ee5/sitemap.xml?view=1
+Sitemap: https://viktoria-nidz.github.io/BETROOT_HW/exam1/sitemap.xml
 Host:viktoria-nidz.github.io
