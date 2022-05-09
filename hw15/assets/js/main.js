@@ -68,5 +68,6 @@ function persentages() {
     } else {
         persent = cash / 100 * (monthInBank * monthPers);
         alert(`The amount pf accrued persentages: ${persent.toFixed(2)} UAN`);
+ 
     }
 }
