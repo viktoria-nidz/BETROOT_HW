@@ -27,6 +27,7 @@ function numbFirstgeId() {
 function numbConvert() {
     let numbToConvert;
     document.getElementById('task_1.2_result').innerText = "ENTER YOUR TOTAL PRICE";
+    numbToConvert = parseInt(document.getElementById('task_1.2').value);   
     switch (numbToConvert) {
         case 0:
             document.getElementById('task_1.2_result').innerText = 'your symbol - )';

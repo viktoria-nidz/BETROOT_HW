@@ -7,30 +7,30 @@ function addNumb() {
     let fNumb, sNumb;
     fNumb = parseInt(document.getElementById("task_1.3.1").value);
     sNumb = parseInt(document.getElementById("task_1.3.2").value);
-    if (isNaN(fNumb) || fNumb === null || fNumb == undefined) {
-        document.getElementById('task_1.3_result').innerText = "ERROR, TRE AGAIN";
-    }else if (isNaN(sNumb) || sNumb === null || sNumb == undefined) {
-        document.getElementById('task_1.3_result').innerText = "ERROR, TRE AGAIN";
+    if (isNaN(fNumb)) {
+        errorMessage('task_1.3_result');
+    }else if (isNaN(sNumb)) {
+        errorMessage('task_1.3_result');
     } else {
       return  numbComperision(fNumb, sNumb); 
     }
 }
 
-function numbComperision(fNumb, sNumb) {
+function numbComperision(fNumb=0, sNumb=0) {
     if (fNumb < sNumb) {
-        document.getElementById('task_1.3_result').innerText = "-1";
+        showPerfResult(`task_1.3_result`, -1);
     } else if (fNumb > sNumb) {
-        document.getElementById('task_1.3_result').innerText = "1"; 
+        showPerfResult(`task_1.3_result`, 1);
     } else if (fNumb === sNumb) {
-        document.getElementById('task_1.3_result').innerText = "0";   
+        showPerfResult(`task_1.3_result`, 0);
     }
     
 }
 
 function addOneNumb() {
     let numb = parseInt(document.getElementById("task_1.4").value);
-    if (isNaN(numb) || numb<=0 || numb === null || numb == undefined) {
-        document.getElementById('task_1.4_result').innerText = "ERROR, TRE AGAIN";
+    if (isNaN(numb) || numb <= 0) {
+        errorMessage('task_1.4_result');
     } else {
       return factorial(numb, addOneNumb); 
     }
@@ -45,7 +45,7 @@ function factorial(numb = 0, addOneNumb) {
     for (let i = numb; i >= 1; i--){
         factor = i*factor;
         if (i == 1) {
-            document.getElementById('task_1.4_result').innerText = factor;   
+            showPerfResult(`task_1.4_result`, factor);
         }
     }
 }
@@ -56,12 +56,12 @@ function addThreeNumb() {
     fNumb = parseInt(document.getElementById("task_1.5.1").value);
     sNumb = parseInt(document.getElementById("task_1.5.2").value);
     tNumb = parseInt(document.getElementById("task_1.5.3").value);
-    if (isNaN(fNumb) || fNumb<=0 || fNumb>9 || fNumb === null || fNumb == undefined) {
-        document.getElementById('task_1.5_result').innerText = "ERROR, TRE AGAIN";
-    }else if (isNaN(sNumb) || sNumb<0 || sNumb>9 || sNumb === null || sNumb == undefined) {
-        document.getElementById('task_1.5_result').innerText = "ERROR, TRE AGAIN";
-    } else if (isNaN(tNumb) || tNumb<0 || tNumb>9 || tNumb === null || tNumb == undefined) {
-        document.getElementById('task_1.5_result').innerText = "ERROR, TRE AGAIN";
+    if (isNaN(fNumb) || fNumb <= 0 || fNumb > 9) {
+        errorMessage('task_1.5_result');
+    }else if (isNaN(sNumb) || sNumb<0 || sNumb>9) {
+        errorMessage('task_1.5_result');
+    } else if (isNaN(tNumb) || tNumb<0 || tNumb>9) {
+        errorMessage('task_1.5_result');
     }else {
       return  numbCombinate(fNumb, sNumb, tNumb); 
     }
@@ -77,14 +77,13 @@ function numbCombinate(fNumb, sNumb, tNumb) {
 function addParam() {
     let length, width;
     length = parseInt(document.getElementById("task_1.6.1").value);
-
     width = parseInt(document.getElementById("task_1.6.2").value);
     if (length<=0 || length === null) {
-        document.getElementById('task_1.6_result').innerText = "ERROR, TRE AGAIN";
+        errorMessage('task_1.6_result');
     }else if ( width<=0 || width === null) {
-        document.getElementById('task_1.6_result').innerText = "ERROR, TRE AGAIN";
+        errorMessage('task_1.6_result');
     } else if (isNaN(length) && isNaN(width)) {
-        document.getElementById('task_1.6_result').innerText = "ERROR, TRE AGAIN";
+        errorMessage('task_1.6_result');
     } else if (isNaN(length) || isNaN(width)){
       return  squareS(length, width); 
     } else {
@@ -157,10 +156,10 @@ function getRange() {
     let minNumb, maxNumb;
     minNumb = parseInt(document.getElementById("task_8.1").value);
     maxNumb = parseInt(document.getElementById("task_8.2").value);
-    if (isNaN(minNumb) || minNumb === null || minNumb == undefined) {
-        document.getElementById('task_8_result').innerText = "ERROR, TRE AGAIN";
-    }else if (isNaN(maxNumb) || maxNumb === null || maxNumb == undefined) {
-        document.getElementById('task_8_result').innerText = "ERROR, TRE AGAIN";
+    if (isNaN(minNumb)) {
+        errorMessage('task_8_result');
+    }else if (isNaN(maxNumb)) {
+        errorMessage('task_8_result');
     } else {
         let perfectNumbs = '';
         for (let i = minNumb; i <= maxNumb; i++){
@@ -169,7 +168,7 @@ function getRange() {
             }
             if (i == maxNumb) {
                 if (perfectNumbs !== '') {
-                    return showPerfResult(perfectNumbs);
+                    return showPerfResult('task_8_result', perfectNumbs);
                 } else {
                     document.getElementById('task_8_result').innerText = "I can't find perfect numbers";
                 }
@@ -179,7 +178,9 @@ function getRange() {
      
     }
 }
-
-function showPerfResult(perfectNumbs) {
-    document.getElementById('task_8_result').innerText = perfectNumbs;  
+function errorMessage(task) {
+    document.getElementById(`${task}`).innerText = "ERROR, TRE AGAIN";
+}
+function showPerfResult(whereIsIt, value) {
+    document.getElementById(`${whereIsIt}`).innerText = value;  
 }
