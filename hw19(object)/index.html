@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <title>OBJECTS</title>
+  </head>
+  <body>
+    <div class="container pt-4">
+      <div class="card mb-4">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-6">
+              <p> <pre>
+                Створи об'єкт, що описує автомобіль (виробник, модель, рік
+                випуску, середня швидкість, обсяг паливного бака, середня
+                витрата палива на 100 км., водії), і наступні функції для роботи
+                з цим об'єктом: 
+
+                1. Висновок на екран з інформацією про автомобіль.
+
+                2.Додавання водія, який має право керувати автомобілем.
+
+                3.Заправка автомобіля. 
+
+                4.Підрахунок необхідного часу для подолання переданої
+                відстані з середньою швидкістю. Враховуй, що через кожні 4
+                години дороги водієві необхідно робити перерву на 1 годину, а
+                також потрібно перевіряти чи має право водій керувати даним
+                автомобілем (ім'я водія функція приймає другим аргументом).
+                Також потрібно перевірити чи вистачить палива, для здійснення
+                цієї поїздки, якщо палива не вистачить потрібно вивести
+                повідомлення, про це і запропонувати заправити автомобіль.
+              </pre>
+                
+              </p>
+            </div>
+            <div class="col-2">
+                <div class="row">
+
+                </div>
+                <div class="col">
+                    <div class="row">
+                        <button
+                        type="button"
+                        id="btn-show"
+                        class="btn btn-info"
+                        onclick="showInfo()">
+                        SHOW INFO
+                      </button>
+                    </div>
+                  
+                  <br>
+                  <br>
+                  <div class="row">
+                   
+                  <input
+                  type="text"
+                  name="task1.2"
+                  id="task_1.2"
+                  class="me-3"
+                />
+                <button
+                type="button"
+                class="btn btn-info"
+                onclick="addDriver()">
+                Add a driver
+              </button>   
+                  </div>
+                
+                <br>
+                <br>
+                <div class="row">
+                    <input
+                    type="number"
+                    name="task1.3"
+                    id="task_1.3"
+                    class="me-3"
+                  />
+                <button
+                onclick="addGasoline()"
+                type="button"
+                class="btn btn-info">
+                Add gasoline
+              </button>
+                </div>
+
+                <br>
+                <br>
+                <div class="row">
+                <button
+                onclick="takeValues()"
+                id="btn-calc"
+                type="button"
+                class="btn btn-info">
+                Time calculation
+              </button>
+                </div>
+                </div>
+            </div>
+
+            <div class="col-4">
+              <p>Результат:</p>
+              <div id="carOperation"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+   
+    <div class="container pt-4">
+        <div class="card mb-4">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-6">
+                <p> <pre>
+                    Створити об'єкт, що описує час (години, хвилини, секунди),
+                     і такі функції для роботи з цим об'єктом:
+                    1) Для виведення часу на екран.
+                    2) Зміни часу на передане кількість секунд.
+                    3) Зміни часу на передане кількість хвилин.
+                    4) Зміни часу на передане кількість годин.
+                    Врахуйте, що в останніх 3-х функціях, при зміні однієї 
+                    частини часу,  може змінитися і інша.
+                     Наприклад: якщо до часу «20:59:45» 
+                    додати 30 секунд, то повинно вийти «21:00:15», 
+                    а не «20:30:75». Також потрібно передбачити можливість 
+                    того що користувачможе передати 150 секунд, 
+                    або 75 хвилин.
+                </pre>
+                </p>
+              </div>
+              <div class="col-2">
+                <div class="row">
+
+                </div>
+                <div class="col">
+                    <div class="row">
+                        <button
+                        type="button"
+                        id="btnShowDate"
+                        class="btn btn-info"
+                        onclick="showTime()">
+                        SHOW TIME
+                      </button>
+                    </div>
+                  
+                  <br>
+                  <br>
+                  <div class="row">
+                   
+                  <input
+                  type="text"
+                  name="task2.2"
+                  id="task_2.2"
+                  class="me-3"
+                />
+                <button
+                type="button"
+                class="btn btn-info"
+                onclick="addSeconds()">
+                Add seconds
+              </button>   
+                  </div>
+                
+                <br>
+                <br>
+                <div class="row">
+                    <input
+                    type="number"
+                    name="task2.3"
+                    id="task_2.3"
+                    class="me-3"
+                  />
+                <button
+                type="button"
+                class="btn btn-info"
+                onclick="addMinutes()">
+                Add minutes
+              </button>
+                </div>
+
+                <br>
+                <br>
+                <div class="row">
+                  <input
+                  type="number"
+                  name="task2.4"
+                  id="task_2.4"
+                  class="me-3"
+                />
+                <button
+                type="button"
+                class="btn btn-info"
+                onclick="addHours()">
+                Add hours
+              </button>
+                </div>
+                </div>
+            </div>
+
+            <div class="col-4">
+              <p>Результат:</p>
+              <div id="timeOperations"></div>
+            </div>
+          </div>
+            </div> 
+          </div>
+        </div>
+      
+
+
+
+        
+    <div class="container pt-4">
+      <div class="card mb-4">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-6">
+              <p> <pre>
+                Створи об'єкт, що описує звичайний дріб.
+                Створи об'єкт, який має методи роботи з дробом:
+               1.  Складання 2-х об'єктів-дробів.
+               2.  Віднімання 2-х об'єктів-дробів.
+               3.  Множення 2-х об'єктів-дробів.
+               4.  Ділення 2-х об'єктів-дробів.
+               5.  Скорочення об'єкта-дробу.
+              </pre>
+              </p>
+            </div>
+            <div class="col-2">
+              <div class="row">
+
+              </div>
+              <div class="col">
+                  <div class="row">
+                      <button
+                      type="button"
+                      id="btnSowDate"
+                      class="btn btn-info"
+                      onclick="drobb.add()">
+                      ADD FRACTIONS
+                    </button>
+                  </div>
+                
+                <br>
+                <br>
+                <div class="row">
+              <button
+              type="button"
+              class="btn btn-info"
+              onclick="drobb.subtract()">
+              SUBTRACT FRACTIONS
+            </button>   
+                </div>
+              
+              <br>
+              <br>
+              <div class="row">
+              <button
+              type="button"
+              class="btn btn-info"
+              onclick="drobb.multiply()">
+              MULTIPLY FRACTIONS
+            </button>
+              </div>
+
+              <br>
+              <br>
+              <div class="row">
+               
+              <button
+              type="button"
+              class="btn btn-info"
+              onclick="drobb.divide()">
+              DIVIDE FRACTIONS
+            </button>
+              </div>
+
+              <br>
+              <br>
+              <div class="row">
+                <div>Enter number of fraction (1 or 2)</div>
+                <input
+                type="number"
+                name="task3.5"
+                id="task_3.5"
+                class="me-3"
+              />
+              <button
+              type="button"
+              class="btn btn-info"
+              onclick="drobb.reduce()">
+              REDUCE FRACTION
+            </button>
+              </div>
+              </div>
+          </div>
+
+          <div class="col-4">
+            <p>Результат:</p>
+            <div id="fractionOperations"></div>
+          </div>
+        </div>
+          </div> 
+        </div>
+      </div>
+
+
+
+  
+  
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
