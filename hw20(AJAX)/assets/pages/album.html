@@ -1,0 +1,68 @@
+<section class="py-5 text-center container">
+  <div class="row py-lg-5">
+    <div class="col-10">
+      <input type="search" name="search" id="search" class="form-control" />
+    </div>
+    <div class="col-2">
+      <button type="button" class="btn btn-info" id="search_btn">Search</button>
+    </div>
+  </div>
+</section>
+
+<div class="album py-5 bg-light movie_wrap">
+  <div class="container"></div>
+</div>
+<div class="col">
+  <div class="card shadow-sm"></div>
+</div>
+
+<script>
+  const API_KES = "294b52ec";
+  $(function () {
+    $("#search_btn").on("click", function () {
+      const search = $("#search").val();
+      if (search !== "") {
+        searchMovies(search).then((response) => {
+          showMovies(response.Search);
+        });
+      }
+    });
+    $("body").on("click", ".btn-detail", function () {
+      const id = $(this).data("id");
+      getMovie(id).then((resp) => {
+        console.log(resp);
+      });
+    });
+  });
+
+  async function getMovie(id) {
+    return fetch(`http://www.omdbapi.com/?apikey=${API_KES}&i=${id}`)
+      .then((resp) => {
+        return resp.json();
+      })
+      .then((resp) => {
+        return resp;
+      });
+  }
+  async function searchMovies(search) {
+    return $.ajax({
+      url: `http://www.omdbapi.com/?apikey=${API_KES}&s=${search}`,
+      type: "get",
+      dataType: "json",
+    });
+  }
+  function showMovies(movies) {
+    let html = "";
+    movies.forEach((item) => {
+      html += `<div class="card" style="width: 18rem;">
+    <img src="${item.Poster}" class="card-img-top" alt="${item.Title}">
+    <div class="card-body">
+      <h5 class="card-title">${item.Title}</h5>
+      <p class="card-text">${item.Year}</p>
+      <button href="#" class="btn btn-primary btn-detail" data-id="${item.imdbID}">Details</button>
+    </div>
+  </div>`;
+    });
+    $(".movie_wrap").html(html);
+  }
+</script>

@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="assets/plugins/animation/animate.min.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet"
@@ -136,11 +137,11 @@
     <main>
       <section class="tl">
         <div class="container clearfix">
-          <div class="img_wrap">
+          <div class="img_wrap wow animate__animated animate__fadeInRight">
             <img src="assets/images/people.png" alt="people happy" />
           </div>
 
-          <div class="text_wrap">
+          <div class="text_wrap wow animate__animated animate__fadeInLeft">
             <div class="content_h2">
               <h2>The Design Thinking superpowers</h2>
             </div>
@@ -166,17 +167,17 @@
 
       <section>
         <div class="container flex">
-          <div class="h3_wrap">
+          <div class="h3_wrap wow animate__animated animate__tada">
             <h3>We design tools to unveil your superpowers</h3>
           </div>
           <div class="tools_wrap">
-            <div class="tool">
+            <div class="tool wow animate__animated animate__backInDown">
               <div class="icon1"><span class="icon-mouse-pointer"></span></div>
               <h5>First click tests</h5>
               <p class="tool_p">While most people enjoy casino gambling,</p>
             </div>
 
-            <div class="tool">
+            <div class="tool wow animate__animated animate__backInUp">
               <div class="icon2"><span class="icon-stumbleupon"></span></div>
               <h5>Design surveys</h5>
               <p class="tool_p">
@@ -184,13 +185,13 @@
               </p>
             </div>
 
-            <div class="tool">
+            <div class="tool wow animate__animated animate__backInDown">
               <div class="icon3"><span class="icon-heart"></span></div>
               <h5>Preference tests</h5>
               <p class="tool_p">The Myspace page defines the individual.</p>
             </div>
 
-            <div class="tool">
+            <div class="tool wow animate__animated animate__backInUp">
               <div class="icon4"><span class="icon-hourglass-2"></span></div>
               <h5>Five second tests</h5>
               <p class="tool_p">
@@ -206,7 +207,9 @@
 
       <section class="img-r-first">
         <div class="container img right">
-          <div class="text-wrap">
+          <div
+            class="text-wrap wow animate__animated animate__fadeInBottomLeft"
+          >
             <div class="sup-title">Effortless Validation for</div>
             <h3>Design Professionals</h3>
             <p class="under-title">
@@ -231,7 +234,9 @@
             </p>
           </div>
 
-          <div class="img-wrap man1">
+          <div
+            class="img-wrap man1 wow animate__animated animate__fadeInBottomRight"
+          >
             <img src="assets/images/man1.png" alt="decign man" />
           </div>
         </div>
@@ -239,10 +244,14 @@
 
       <section class="img-l-first">
         <div class="container img left">
-          <div class="img-wrap man2">
+          <div
+            class="img-wrap man2 wow animate__animated animate__fadeInBottomLeft"
+          >
             <img src="assets/images/man2.png" alt="prodject manager man" />
           </div>
-          <div class="text-wrap relative">
+          <div
+            class="text-wrap relative wow animate__animated animate__fadeInBottomRight"
+          >
             <div class="sup-title">Easier decision making for</div>
             <h3>Product Managers</h3>
             <p class="under-title">
@@ -270,7 +279,9 @@
 
       <section class="img-r-second">
         <div class="container img right">
-          <div class="text-wrap">
+          <div
+            class="text-wrap wow animate__animated animate__fadeInBottomLeft"
+          >
             <div class="sup-title">Optimisation for</div>
             <h3>Marketers</h3>
             <p class="under-title">
@@ -295,7 +306,9 @@
             </p>
           </div>
 
-          <div class="img-wrap man3">
+          <div
+            class="img-wrap man3 wow animate__animated animate__fadeInBottomRight"
+          >
             <img src="assets/images/man3.png" alt="marketers man" />
           </div>
         </div>
@@ -304,13 +317,13 @@
 
     <footer id="footer">
       <div class="container first">
-        <div class="logo">
+        <div class="logo wow animate__animated animate__zoomInLeft">
           <a href="#">
             <img src="assets/images/Logo.png" alt="logo Productly" />
           </a>
         </div>
         <div class="container flex">
-          <div class="list l1">
+          <div class="list wow animate__animated animate__flipOutY l1">
             <ul>
               <li>About Us</li>
               <li>Blog</li>
@@ -319,7 +332,7 @@
             </ul>
           </div>
 
-          <div class="list l2">
+          <div class="list wow animate__animated animate__flipOutY l2">
             <ul>
               <li>Disclaimer</li>
               <li>Financing</li>
@@ -328,7 +341,9 @@
             </ul>
           </div>
 
-          <div class="btn_wrap4">
+          <div
+            class="btn_wrap4 wow animate__animated animate__rotateInDownLeft"
+          >
             <div class="input">
               <input class="inpt" type="text" />
             </div>
@@ -338,13 +353,14 @@
           </div>
         </div>
       </div>
-
+      <script src="assets/plugins/animation/wow.min.js"></script>
       <script
         src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
         crossorigin="anonymous"
       ></script>
       <script>
+        new WOW().init();
         $(function () {
           $(".hamburger").on("click", function () {
             $(".hamburger").toggleClass("is-active");

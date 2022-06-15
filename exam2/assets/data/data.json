@@ -1,0 +1,56 @@
+[
+    {
+        "title":"SEE THE UNMATCHED BEAUTY OF THE GREAT.",
+        "image":"assets/images/photo1.jpg",
+        "text":"Free directories: directories are perfect for customers that are searching for...",
+        "date":"20 Jan 2020",
+        "author":{
+            "avatar":"assets/images/author1.jpg",
+            "name": "ALJA BRUN"
+        }
+
+    },
+    {
+        "title":"EFFECTIVE ADVERTISING POINTERS.",
+        "image":"assets/images/photo2.jpg",
+        "text":"Having a home based business is a wonderful asset to your life...",
+        "date":"13 Dec 2019",
+        "author":{
+            "avatar":"assets/images/author2.jpg",
+            "name": "DOMINIC FREEMAN"
+        }
+
+    },
+    {
+        "title":"HYPNOTIZE YOURSELF INTO THE GHOST.",
+        "image":"assets/images/photo3.jpg",
+        "text":"There are many things that are important to catalog design...",
+        "date":"30 Nov 2019",
+        "author":{
+            "avatar":"assets/images/author3.jpg",
+            "name": "ALICE WARD"
+        }
+
+    },
+    {
+        "title":"AMAZING CONTENT FOR ADVERTISING POINTERS",
+        "image":"assets/images/photo2.jpg",
+        "text":"To understant interesting content you need to do more exersises which can...",
+        "date":"27 Jan 2019",
+        "author":{
+            "avatar":"assets/images/author1.jpg",
+            "name": "MEL PORTMAN"
+        }
+
+    },
+    {
+        "title":"MISTAKE CHANGED, BEAUTY OF THE GREAT",
+        "image":"assets/images/photo3.jpg",
+        "text":"There are many things that are important to catalog design...",
+        "date":"25 Sept 2020",
+        "author":{
+            "avatar":"assets/images/author2.jpg",
+            "name": "DILAN BROLE"
+        }
+    }
+]
