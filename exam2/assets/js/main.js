@@ -89,8 +89,10 @@ fetch("assets/data/data.json")
       <div class="swiper-pagination"></div>
     </div>
     <div class="buttons-swipe">
-    <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
+  
+    <div class="swiper-button-next"></div>
+    
     </div>
   
     `
@@ -115,22 +117,61 @@ fetch("assets/data/data.json")
 
 
 
-//   lightGallery(document.getElementById('animated-thumbnails'), {
-//     thumbnail: true,
-//     mode: 'fade',
-//     preload: 2,
-//     loop: true,
-//     speed:500,
-// });
-
-// lightGallery(document.querySelector("#animate"));
-
 lightGallery(document.getElementById('animate'), {
   plugins: [lgZoom, lgThumbnail],
   selector: '.item',
-  animateThumb: true,
-  zoomFromOrigin: false,
-  allowMediaOverlap: true,
-  toggleThumb: true,
 });
 
+
+
+
+
+// $(".map-screen").on("click", function () {
+ 
+// const map = L.map("map").setView([51.505, -0.09], 13);
+//   $(".map-screen").remove();
+// L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+//   attribution:
+//     '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+// }).addTo(map);
+
+// L.marker([51.5, -0.09])
+//   .addTo(map)
+//   .bindPopup("A pretty CSS3 popup.<br> Easily customizable.")
+//   .openPopup();
+
+// })
+
+
+    
+
+// var point, ico;
+// $("#map_cover").remove(),
+//   point = L.map("map").setView([50.4842892,30.4621455], 15),
+//   ico = L.icon({
+//       iconUrl: "assets/images/Pin.png",
+//       iconSize: [50, 50],
+//       iconAnchor: [25, 50],
+//       popupAnchor: [17, -90]
+//     }), L.tileLayer("https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+//       {
+//         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+//       }).addTo(point), L.marker([50.4842892,30.4621455],
+//         { icon: ico }).addTo(point).bindPopup("Monticello")
+
+
+
+function initMap () {
+  var map = L.map('map').setView([51.505, -0.09], 13);
+  L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
+  
+  L.marker([51.5, -0.09]).addTo(map)
+      .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+      .openPopup();
+  };
+$('.map-screen').on('click', function () {
+      $('.map-screen').remove()
+      initMap( );
+  });

@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/plagins/leaflet/leaflet.css" />
     <link
       rel="stylesheet"
       href="assets/plagins/swipejs-slider/swiper-bundle.min.css"
@@ -20,20 +21,20 @@
     <header id="header">
       <div class="container">
         <div class="logo">
-          <img src="assets/images/Logo (2).svg" alt="logo" />
+          <a href="#"> <img src="assets/images/Logo (2).svg" alt="logo" /></a>
         </div>
         <ul class="main_menu">
-          <li><a href="#"> About us</a></li>
-          <li><a href="#"> Projects</a></li>
-          <li><a href="#"> News</a></li>
-          <li><a href="#"> Contact</a></li>
+          <li><a href="#aboutUs"> About us</a></li>
+          <li><a href="#projects"> Projects</a></li>
+          <li><a href="#news"> News</a></li>
+          <li><a href="#contact"> Contact</a></li>
         </ul>
 
         <ul class="social_networks">
           <li>
             <a
               title="facebook"
-              href="#"
+              href="https://www.facebook.com/"
               target="_blank"
               rel="noopenner noreferrer"
               ><span class="iconify" data-icon="brandico:facebook"></span>
@@ -43,7 +44,7 @@
           <li>
             <a
               title="twitter"
-              href="#"
+              href="https://twitter.com/home?lang=uk"
               target="_blank"
               rel="noopenner noreferrer"
               ><span class="iconify" data-icon="akar-icons:twitter-fill"></span>
@@ -53,7 +54,7 @@
           <li>
             <a
               title="instagram"
-              href="#"
+              href="https://www.instagram.com/"
               target="_blank"
               rel="noopenner noreferrer"
             >
@@ -109,7 +110,7 @@
         <a href="#" class="arrow"></a>
       </section>
 
-      <section class="what_do">
+      <section id="aboutUs" class="what_do">
         <h2 class="section-title">WHAT WE DO</h2>
         <div class="project first left">
           <div class="container left">
@@ -123,7 +124,7 @@
                 the right frame of mind. The truth is, our thoughts are very
                 powerful.
               </p>
-              <button type="button">MORE DETAILS</button>
+              <button class="static-btn" type="button">MORE DETAILS</button>
               <a
                 href="https://goo.gl/maps/VdNJ7ixQu3Y9v7dz6"
                 target="_blank"
@@ -157,7 +158,7 @@
                 look at the big ‘R’ of recognition and how a digital advertising
                 network may help.
               </p>
-              <button type="button">MORE DETAILS</button>
+              <button class="static-btn" type="button">MORE DETAILS</button>
               <a
                 href="https://goo.gl/maps/2KDjbB2xAYyJUchbA"
                 target="_blank"
@@ -183,7 +184,7 @@
         </div>
       </section>
 
-      <section class="latest-news">
+      <section id="news" class="latest-news">
         <div class="container sliderN">
           <h2 class="section-title">LATEST NEWS</h2>
           <div id="slider-news"></div>
@@ -192,7 +193,7 @@
 
       <div id="gallery">
         <div class="container">
-          <h2 class="section-title">GALLERY</h2>
+          <h2 id="projects" class="section-title">GALLERY</h2>
           <div id="animate">
             <div class="imgLarge">
               <a class="item" href="assets/images/galLarge.jpg">
@@ -214,10 +215,183 @@
               </a>
             </div>
           </div>
-          <button type="button" class="button-gal">SEE MORE</button>
+          <button type="button" class="button-gal static-btn">SEE MORE</button>
         </div>
       </div>
+
+      <div id="map">
+        <a href="javascript:void(0)" id="map_cover">
+          <img
+            class="map-screen"
+            data-src="assets/images/Map.png"
+            src="assets/images/Map.png"
+            alt="map_screen"
+          />
+        </a>
+      </div>
     </main>
+
+    <footer id="footer">
+      <div class="form-wrap">
+        <h2 id="contact" class="section-title">GET IN TOUCH</h2>
+        <div class="inf-wrap">
+          <div class="cont-form">
+            <ul class="contacts">
+              <li>
+                <span
+                  ><svg
+                    width="9"
+                    height="14"
+                    viewmox="0 0 9 14"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M6.42857 4.5C6.42857 5.68025 5.46596 6.64286 4.28571 6.64286C3.10547 6.64286 2.14286 5.68025 2.14286 4.5C2.14286 3.31975 3.10547 2.35714 4.28571 2.35714C5.46596 2.35714 6.42857 3.31975 6.42857 4.5ZM8.57143 4.5C8.57143 2.13114 6.65458 0.214285 4.28571 0.214285C1.91685 0.214285 0 2.13114 0 4.5C0 5.0106 0.0585938 5.53795 0.276228 5.99833L3.33147 12.4771C3.49888 12.8454 3.88393 13.0714 4.28571 13.0714C4.6875 13.0714 5.07254 12.8454 5.24833 12.4771L8.2952 5.99833C8.51284 5.53795 8.57143 5.0106 8.57143 4.5Z"
+                      fill="#7E5AFF"
+                    /></svg
+                ></span>
+                <a
+                  href="https://www.google.com/maps/@40.6841911,-73.8991217,15z"
+                  target="_blank"
+                  >91 Nolan Extensions Suite 670</a
+                >
+              </li>
+              <li>
+                <span
+                  ><svg
+                    width="12"
+                    height="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 0 53.942 53.942"
+                  >
+                    <path
+                      d="M53.364,40.908c-2.008-3.796-8.981-7.912-9.288-8.092c-0.896-0.51-1.831-0.78-2.706-0.78c-1.301,0-2.366,0.596-3.011,1.68 c-1.02,1.22-2.285,2.646-2.592,2.867c-2.376,1.612-4.236,1.429-6.294-0.629L17.987,24.467c-2.045-2.045-2.233-3.928-0.632-6.291 c0.224-0.309,1.65-1.575,2.87-2.596c0.778-0.463,1.312-1.151,1.546-1.995c0.311-1.123,0.082-2.444-0.652-3.731 c-0.173-0.296-4.291-7.27-8.085-9.277c-0.708-0.375-1.506-0.573-2.306-0.573c-1.318,0-2.558,0.514-3.49,1.445L4.7,3.986 c-4.014,4.013-5.467,8.562-4.321,13.52c0.956,4.132,3.742,8.529,8.282,13.068l14.705,14.705c5.746,5.746,11.224,8.66,16.282,8.66 c0,0,0,0,0.001,0c3.72,0,7.188-1.581,10.305-4.698l2.537-2.537C54.033,45.163,54.383,42.833,53.364,40.908z"
+                      fill="#7E5AFF"
+                    /></svg
+                ></span>
+                <a href="tel:+001356-868-2454">+001 356-868-2454</a>
+              </li>
+              <li>
+                <span>
+                  <svg
+                    width="14px"
+                    height="14px"
+                    viewbox="0 0 16 16"
+                    version="1.1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                  >
+                    <path
+                      fill="#7E5AFF"
+                      d="M13 1h-10l-3 9v5h16v-5l-3-9zM11 10v2h-6v-2h-3.9l2.7-8h8.6l2.7 8h-4.1z"
+                    ></path></svg
+                ></span>
+                <a href="mailto:montichello@service.com"
+                  >montichello@service.com</a
+                >
+              </li>
+              <li>
+                <span
+                  ><svg
+                    width="14px"
+                    height="14px"
+                    version="1.1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    x="0px"
+                    y="0px"
+                    viewBox="0 0 16 16"
+                    style="enable-background: new 0 0 16 16"
+                    xml:space="preserve"
+                  >
+                    <path
+                      fill="#7E5AFF"
+                      d="M8,0C3.589,0,0,3.589,0,8s3.589,8,8,8s8-3.589,8-8S12.411,0,8,0z M8,14c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6 S11.309,14,8,14z"
+                    />
+                    <path
+                      fill="#7E5AFF"
+                      d="M7,7H4v2h4c0.552,0,1-0.448,1-1V3H7V7z"
+                    /></svg
+                ></span>
+                From 07:05AM to 19:30PM
+              </li>
+            </ul>
+          </div>
+
+          <div class="input-sect">
+            <form method="post" action="#" enctype="multipart/form-data">
+              <input
+                type="text"
+                name="full_name"
+                id="footer_form_name"
+                class="form_input name"
+                placeholder="Name"
+                required
+              />
+              <input
+                type="email"
+                name="email"
+                id="footer_form_email"
+                class="form_input email"
+                placeholder="Email"
+                required
+              />
+              <button type="submit" class="static-btn form">SUBMIT</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="container down-menu">
+        <div class="footer_bottom">
+          <div class="logo more">
+            <a href="#">
+              <img src="assets/images/Credit.png" alt="logo" />
+            </a>
+          </div>
+          <ul class="social_networks">
+            <li>
+              <a
+                title="facebook"
+                href="https://www.facebook.com/"
+                target="_blank"
+                rel="noopenner noreferrer"
+                ><span class="iconify" data-icon="brandico:facebook"></span>
+              </a>
+            </li>
+
+            <li>
+              <a
+                title="twitter"
+                href="https://twitter.com/home?lang=uk"
+                target="_blank"
+                rel="noopenner noreferrer"
+                ><span
+                  class="iconify"
+                  data-icon="akar-icons:twitter-fill"
+                ></span>
+              </a>
+            </li>
+
+            <li>
+              <a
+                title="instagram"
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noopenner noreferrer"
+              >
+                <span
+                  class="iconify"
+                  data-icon="akar-icons:instagram-fill"
+                ></span
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
 
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -225,7 +399,7 @@
     <script src="assets/plagins/lightGallery/lightgallery.min.js"></script>
     <script src="assets/plagins/lightGallery/lg-zoom.min.js"></script>
     <script src="assets/plagins/lightGallery/lg-thumbnail.min.js"></script>
-
+    <script src="assets/plagins/leaflet/leaflet.js"></script>
     <script src="assets/plagins/swipejs-slider/swiper-bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
   </body>
