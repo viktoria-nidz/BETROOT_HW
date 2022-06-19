@@ -760,6 +760,20 @@ form .static-btn.form {
 }
 
 .footer_bottom {
+  width: 100%;
+  padding-bottom: 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer_bottom img {
+  margin-top: 50px;
+}
+.footer_bottom .social_networks {
+  margin-top: -67px;
+}
+
+.footer_bottom {
   position: absolute;
   margin: 0 auto;
   bottom: 160px;
@@ -928,6 +942,10 @@ form .static-btn.form {
   }
 }
 @media screen and (max-width: 900px) {
+  .footer_bottom .social_networks {
+    margin-left: -3px;
+  }
+
   .form-wrap {
     max-width: 527px;
   }
