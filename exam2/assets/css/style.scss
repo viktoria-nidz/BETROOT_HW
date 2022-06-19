@@ -77,7 +77,7 @@ img {
     left: 0;
     top: 0;
     font-family:'Montserrat';
-    background-image: url(/assets/images/Header.jpg);
+    background-image: url(../images/Header.jpg);
     background-repeat: no-repeat;
     object-fit: cover;
     color: #fff;
@@ -140,7 +140,7 @@ img {
     backdrop-filter: blur(7px);
     opacity: 0.9;
     width: 100%;
-    background-image: url(/assets/images/BackgroundFooter.png);
+    background-image: url(../images/BackgroundFooter.png);
     background-repeat: no-repeat;
     object-fit: cover;
 top: 0;
@@ -456,7 +456,7 @@ transform: rotate(132deg);
 
 .latest-news{
     margin-top: 84px;
-    background-image: url(/assets/images/BackgroundNews.jpg);
+    background-image: url(../images/BackgroundNews.jpg);
     background-repeat: no-repeat;
     object-fit: cover;
     .container{
@@ -746,7 +746,7 @@ margin-bottom: 139px;
     }
     max-width: 770px;
    
-    background-image: url(/assets/images/bcform.jpg);
+    background-image: url(../images/bcform.jpg);
     background-repeat: no-repeat;
     object-fit: cover;
     background-repeat: no-repeat;
@@ -830,7 +830,7 @@ margin: 0 auto;
 }
 
 #footer{
-    background-image: url("/assets/images/BackgroundFooter.png");
+    background-image: url("../images/BackgroundFooter.png");
     background-repeat: no-repeat; 
     object-fit: cover;
     position: relative;
