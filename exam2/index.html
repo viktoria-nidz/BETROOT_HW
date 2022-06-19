@@ -6,31 +6,141 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="assets/plagins/leaflet/leaflet.css" />
     <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/images/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/images/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="assets/images/favicon/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="assets/images/favicon/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+    <link
       rel="stylesheet"
       href="assets/plagins/swipejs-slider/swiper-bundle.min.css"
     />
+    <link rel="stylesheet" href="assets/css/hamburgers.min.css" />
     <link
       rel="stylesheet"
       href="assets/plagins/lightGallery/css/lightgallery-bundle.min.css"
     />
     <link rel="stylesheet" href="assets/css/fonts.css" />
     <link rel="stylesheet" href="assets/css/style.min.css" />
+    <meta name="robots" content="all" />
+    <meta name="revisit-after" content="1 days" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="MONTICELLO" />
+    <meta property="og:title" content="Main | MONTICELLO" />
+    <meta
+      property="og:url"
+      content="https://viktoria-nidz.github.io/BETROOT_HW/exam2/index.html"
+    />
+    <meta
+      property="og:image"
+      content="https://viktoria-nidz.github.io/BETROOT_HW/exam2/assets/images/gal3.jpg"
+    />
+    <meta
+      property="og:description"
+      content="We develop extremely modern and practical designs and architecture. We fulfill all orders quickly and in an original way, we work with different countries."
+    />
+
+    <meta name="twitter:title" content="Main | MONTICELLO" />
+    <meta
+      name="twitter:description"
+      content="We develop extremely modern and practical designs and architecture. We fulfill all orders quickly and in an original way, we work with different countries."
+    />
+    <meta
+      name="twitter:image"
+      content="https://viktoria-nidz.github.io/BETROOT_HW/exam1/assets/images/bg4.jpg"
+    />
+
+    <meta
+      name="description"
+      content="We develop extremely modern and practical designs and architecture. We fulfill all orders quickly and in an original way, we work with different countries."
+    />
     <title>Monticello</title>
   </head>
   <body>
+    <div class="page-overlay"></div>
+    <div id="side-block">
+      <div class="wrapper">
+        <ul itemscope itemtype="http://shema.org/SiteNavigationElement" class="main_menu mobile_version">
+          <li><a itemprop="url" href="#aboutUs"> About us</a></li>
+          <li><a itemprop="url" href="#projects"> Projects</a></li>
+          <li><a itemprop="url" href="#news"> News</a></li>
+          <li><a itemprop="url" href="#contact"> Contact</a></li>
+        </ul>
+        <ul class="social_networks side">
+          <li>
+            <a
+              title="facebook"
+              href="https://www.facebook.com/"
+              target="_blank"
+              rel="noopenner noreferrer"
+              ><span class="iconify" data-icon="brandico:facebook"></span>
+            </a>
+          </li>
+
+          <li>
+            <a
+              title="twitter"
+              href="https://twitter.com/home?lang=uk"
+              target="_blank"
+              rel="noopenner noreferrer"
+              ><span class="iconify" data-icon="akar-icons:twitter-fill"></span>
+            </a>
+          </li>
+
+          <li>
+            <a
+              title="instagram"
+              href="https://www.instagram.com/"
+              target="_blank"
+              rel="noopenner noreferrer"
+            >
+              <span class="iconify" data-icon="akar-icons:instagram-fill"></span
+            ></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
     <header id="header">
-      <div class="container">
+      <div id="header-wrap" class="container">
         <div class="logo">
           <a href="#"> <img src="assets/images/Logo (2).svg" alt="logo" /></a>
         </div>
-        <ul class="main_menu">
-          <li><a href="#aboutUs"> About us</a></li>
-          <li><a href="#projects"> Projects</a></li>
-          <li><a href="#news"> News</a></li>
-          <li><a href="#contact"> Contact</a></li>
+        <div class="hamb_menu">
+          <button class="hamburger hamburger--arrow-r" type="button">
+            <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+            </span>
+          </button>
+        </div>
+        <ul itemscope itemtype="http://shema.org/SiteNavigationElement" class="main_menu">
+          <li><a itemprop="url" href="#aboutUs"> About us</a></li>
+          <li><a itemprop="url"  href="#projects"> Projects</a></li>
+          <li><a itemprop="url" href="#news"> News</a></li>
+          <li><a itemprop="url" href="#contact"> Contact</a></li>
         </ul>
 
-        <ul class="social_networks">
+        <ul class="social_networks main">
           <li>
             <a
               title="facebook"
@@ -81,40 +191,66 @@
                 <div class="title">CHEAP & NICE</div>
                 <div class="subtext">WE MAKE THE WORLD BEAUTIFUL EVERYDAY</div>
               </div>
-              <img src="assets/images/Header2.jpg" alt="slider img" />
+              <img
+                class="lazy"
+                src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw=="
+                data-src="assets/images/Header2.jpg"
+                alt="slider img"
+              />
             </div>
             <div class="swiper-slide">
               <div class="content_slide">
                 <div class="title">NEW & SPECIAL</div>
                 <div class="subtext">WE MAKE THE WORLD BEAUTIFUL EVERYDAY</div>
               </div>
-              <img src="assets/images/Header3.jpg" alt="slider img" />
+              <img
+                class="lazy"
+                src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw=="
+                data-src="assets/images/Header3.jpg"
+                alt="slider img"
+              />
             </div>
             <div class="swiper-slide">
               <div class="content_slide">
                 <div class="title">INTERESTING & UNUSUAL</div>
                 <div class="subtext">WE MAKE THE WORLD BEAUTIFUL EVERYDAY</div>
               </div>
-              <img src="assets/images/Header4.jpg" alt="slider img" />
+              <img
+                class="lazy"
+                src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw=="
+                data-src="assets/images/Header4.jpg"
+                alt="slider img"
+              />
             </div>
             <div class="swiper-slide">
               <div class="content_slide">
                 <div class="title">GREAT & PERFECT</div>
                 <div class="subtext">WE MAKE THE WORLD BEAUTIFUL EVERYDAY</div>
               </div>
-              <img src="assets/images/Header5.jpg" alt="slider img" />
+              <img
+                class="lazy"
+                src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw=="
+                data-src="assets/images/Header5.jpg"
+                alt="slider img"
+              />
             </div>
           </div>
           <div class="swiper-pagination"></div>
         </div>
-        <a href="#" class="arrow"></a>
+        <a href="#trade" class="arrow"></a>
       </section>
 
       <section id="aboutUs" class="what_do">
         <h2 class="section-title">WHAT WE DO</h2>
         <div class="project first left">
           <div class="container left">
-            <img src="assets/images/building1.jpg" alt="trade centre" />
+            <img
+              id="trade"
+              class="lazy"
+              src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw=="
+              data-src="assets/images/building1.jpg"
+              alt="trade centre"
+            />
 
             <div class="info_wrap">
               <div class="uptext">ONE WORLD</div>
@@ -149,7 +285,7 @@
         </div>
 
         <div class="project second right">
-          <div class="container">
+          <div class="container right">
             <div class="info_wrap">
               <div class="uptext">INTERNATIONAL</div>
               <h3>COMMERCE CENTRE</h3>
@@ -179,14 +315,19 @@
                 >Hong Kong - 1588 feet
               </a>
             </div>
-            <img src="assets/images/building2.jpg" alt="trade centre" />
+            <img
+              class="lazy"
+              src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw=="
+              data-src="assets/images/building2.jpg"
+              alt="trade centre"
+            />
           </div>
         </div>
       </section>
 
-      <section id="news" class="latest-news">
+      <section class="latest-news">
         <div class="container sliderN">
-          <h2 class="section-title">LATEST NEWS</h2>
+          <h2 id="news" class="section-title">LATEST NEWS</h2>
           <div id="slider-news"></div>
         </div>
       </section>
@@ -197,21 +338,41 @@
           <div id="animate">
             <div class="imgLarge">
               <a class="item" href="assets/images/galLarge.jpg">
-                <img src="assets/images/galLarge.jpg" />
+                <img
+                  class="lazy"
+                  src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw=="
+                  data-src="assets/images/galLarge.jpg"
+                />
               </a>
             </div>
             <div class="smallerImg">
               <a class="item" href="assets/images/gal2.jpg">
-                <img src="assets/images/gal2.jpg" />
+                <img
+                  class="lazy"
+                  src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw=="
+                  data-src="assets/images/gal2.jpg"
+                />
               </a>
               <a class="item" href="assets/images/gal3.jpg">
-                <img src="assets/images/gal3.jpg" />
+                <img
+                  class="lazy"
+                  src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw=="
+                  data-src="assets/images/gal3.jpg"
+                />
               </a>
               <a class="item" href="assets/images/gal4.jpg">
-                <img src="assets/images/gal4.jpg" />
+                <img
+                  class="lazy"
+                  src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw=="
+                  data-src="assets/images/gal4.jpg"
+                />
               </a>
               <a class="item" href="assets/images/gal5.jpg">
-                <img src="assets/images/gal5.jpg" />
+                <img
+                  class="lazy"
+                  src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw=="
+                  data-src="assets/images/gal5.jpg"
+                />
               </a>
             </div>
           </div>
@@ -222,9 +383,9 @@
       <div id="map">
         <a href="javascript:void(0)" id="map_cover">
           <img
-            class="map-screen"
+            class="map-screen lazy"
+            src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw=="
             data-src="assets/images/Map.png"
-            src="assets/images/Map.png"
             alt="map_screen"
           />
         </a>
@@ -258,8 +419,8 @@
                 >
               </li>
               <li>
-                <span
-                  ><svg
+                <span>
+                  <svg
                     width="12"
                     height="16"
                     xmlns="http://www.w3.org/2000/svg"
@@ -348,7 +509,12 @@
         <div class="footer_bottom">
           <div class="logo more">
             <a href="#">
-              <img src="assets/images/Credit.png" alt="logo" />
+              <img
+                class="lazy"
+                src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw=="
+                data-src="assets/images/Credit.png"
+                alt="logo"
+              />
             </a>
           </div>
           <ul class="social_networks">
@@ -393,6 +559,7 @@
       </div>
     </footer>
 
+    <script src="assets/js/lazyload.js"></script>
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 

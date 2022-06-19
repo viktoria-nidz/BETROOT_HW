@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://viktoria-nidz.github.io/BETROOT_HW/exam2/sitemap.xml
+Host:viktoria-nidz.github.io

@@ -19,6 +19,37 @@ fetch("assets/data/data.json").then(function (resp) {
     slidesPerView: 3,
     spaceBetween: 30,
     slidesPerGroup: 1,
+    breakpoints: {
+      // when window width is >= 320px
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 90,
+        centeredSlides: true,
+        loop: true,
+        loopFillGroupWithBlank: true
+      },
+      600: {
+        slidesPerView: 1,
+        spaceBetween: 50,
+        loop: true,
+        loopFillGroupWithBlank: true
+      },
+      // when window width is >= 480px
+      800: {
+        slidesPerView: 2,
+        spaceBetween: 50,
+        loop: true,
+        loopFillGroupWithBlank: true
+      },
+      // when window width is >= 640px
+      1200: {
+        slidesPerView: 3,
+        slidesPerGroup: 1,
+        spaceBetween: 30,
+        loop: true,
+        loopFillGroupWithBlank: true
+      }
+    },
     loop: true,
     loopFillGroupWithBlank: true,
     pagination: {
@@ -34,42 +65,69 @@ fetch("assets/data/data.json").then(function (resp) {
 lightGallery(document.getElementById('animate'), {
   plugins: [lgZoom, lgThumbnail],
   selector: '.item'
-}); // $(".map-screen").on("click", function () {
-// const map = L.map("map").setView([51.505, -0.09], 13);
-//   $(".map-screen").remove();
-// L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-//   attribution:
-//     '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-// }).addTo(map);
-// L.marker([51.5, -0.09])
-//   .addTo(map)
-//   .bindPopup("A pretty CSS3 popup.<br> Easily customizable.")
-//   .openPopup();
-// })
-// var point, ico;
-// $("#map_cover").remove(),
-//   point = L.map("map").setView([50.4842892,30.4621455], 15),
-//   ico = L.icon({
-//       iconUrl: "assets/images/Pin.png",
-//       iconSize: [50, 50],
-//       iconAnchor: [25, 50],
-//       popupAnchor: [17, -90]
-//     }), L.tileLayer("https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
-//       {
-//         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-//       }).addTo(point), L.marker([50.4842892,30.4621455],
-//         { icon: ico }).addTo(point).bindPopup("Monticello")
+});
 
 function initMap() {
-  var map = L.map('map').setView([51.505, -0.09], 13);
-  L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
+  point = L.map("map").setView([40.6595335, -73.9672046], 15), ico = L.icon({
+    iconUrl: "assets/images/Pin.png",
+    iconSize: [50, 50],
+    iconAnchor: [25, 50],
+    popupAnchor: [17, -90]
+  }), L.tileLayer("https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png", {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-  }).addTo(map);
-  L.marker([51.5, -0.09]).addTo(map).bindPopup('A pretty CSS3 popup.<br> Easily customizable.').openPopup();
+  }).addTo(point), L.marker([40.6595335, -73.9672046], {
+    icon: ico
+  }).addTo(point).bindPopup("Monticello");
 }
 
-;
-$('.map-screen').on('click', function () {
-  $('.map-screen').remove();
+document.getElementById('map_cover').addEventListener('click', function (event) {
+  event.preventDefault();
+  event.stopPropagation();
+  document.getElementById('map_cover').remove(); // document.getElementById('map').innerHTML = '';
+
   initMap();
+});
+
+function ToggleMenu() {
+  $(".hamburger").toggleClass("is-active");
+  $("#side-block, .page-overlay").toggleClass("open");
+  $("body").toggleClass("lock");
+}
+
+$(function () {
+  $(".hamburger, .page-overlay, #mobile-menu a ").on("click", function () {
+    ToggleMenu();
+  });
+});
+$(function () {
+  $(".arrow").on("click", function (e) {
+    e.preventDefault();
+    $("html, body").animate({
+      scrollTop: $($(this).attr("href")).offset().top - 80
+    }, 500);
+  });
+});
+$(function () {
+  $(" .main_menu a").on("click", function (e) {
+    e.preventDefault();
+    $("html, body").animate({
+      scrollTop: $($(this).attr("href")).offset().top - 80
+    }, 500);
+  });
+});
+$(function () {
+  $("#side-block a").on("click", function (e) {
+    e.preventDefault();
+    $("#side-block, .page-overlay").toggleClass("open");
+    $("html, body").animate({
+      scrollTop: $($(this).attr("href")).offset().top - 80
+    }, 500);
+  });
+});
+window.addEventListener("scroll", function () {
+  if (window.scrollY > 90) {
+    document.getElementById("header-wrap").classList.add("scroll");
+  } else {
+    document.getElementById("header-wrap").classList.remove("scroll");
+  }
 });
