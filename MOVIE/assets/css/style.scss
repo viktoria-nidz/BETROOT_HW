@@ -1,0 +1,265 @@
+body {
+  background-color: #2f2222;
+}
+
+#app {
+  font-family: "Josefin Sans", sans-serif;
+  padding-top: 95px;
+}
+.modal_overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  .myModal {
+    background-color: #c34949;
+    border: #f3db01 7px solid;
+    box-shadow: 5px 5px 5px 0px #2f2222, inset 7px 9px 15px 0px #2f2222,
+      13px 8px 13px 5px #2f2222;
+    padding: 20px;
+    margin-top: 75px;
+    width: 90%;
+    z-index: 101;
+    max-width: 700px;
+    // height: 100px;
+  }
+}
+
+// START menu
+
+#myheader-wrap.mycontainer.scroll {
+  box-shadow: 0 0 5px #999;
+  backdrop-filter: blur(7px);
+  opacity: 0.9;
+  width: 100%;
+  background-image: url(../images/BackgroundFooter.png);
+  background-repeat: no-repeat;
+  object-fit: cover;
+  top: 0;
+  height: 70px;
+  padding: 0 40px;
+  min-width: 100vw;
+}
+
+#myheader .mycontainer {
+  position: fixed;
+  z-index: 1000;
+  left: 50%;
+  transform: translate(-50%, 0);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 70px;
+  transition: all 0.3s ease;
+  background-color: #052512;
+  width: 100vw;
+}
+.logo img {
+  margin-right: 100px;
+  max-width: 241px;
+  max-height: 56px;
+}
+#myheader .logo img {
+  object-fit: unset;
+}
+#myheader .main_menu {
+  text-transform: uppercase;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 600;
+  padding-top: 15px;
+  min-width: 37vw;
+  max-width: 100vw;
+  padding-left: 29px;
+}
+#myheader .main_menu li {
+  padding-left: 10px;
+}
+#myheader .main_menu li a {
+  cursor: pointer;
+  position: relative;
+  color: #ffffff;
+  text-decoration: none;
+  &:hover {
+    color: #f3db01;
+  }
+}
+svg {
+  vertical-align: baseline;
+}
+#myheader .main_menu li a::before {
+  content: "";
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  top: 1px;
+  left: -23px;
+}
+#myheader .main_menu li a:hover::before,
+#myheader .main_menu li a:active::before {
+  background-color: #fff;
+}
+
+.social_networks {
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  width: 190px;
+}
+.social_networks li a {
+  cursor: pointer;
+  margin: 0 auto;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border: 1px #fff solid;
+  border-radius: 50%;
+  text-align: center;
+}
+.social_networks li a[title="facebook"] {
+  width: 10px;
+  height: 18px;
+  padding: 5px 14px;
+  padding-top: 7px;
+}
+.social_networks li a[title="twitter"] {
+  width: 16px;
+  height: 18px;
+  padding: 5px 10px;
+  padding-top: 7px;
+}
+.social_networks li a[title="instagram"] {
+  width: 14px;
+  height: 18px;
+  padding: 5px 10px;
+  padding-top: 7px;
+}
+.social_networks li a:hover {
+  color: #f3db01;
+}
+// FINISH MENU
+
+.wrap-color {
+  background-color: #c34949;
+}
+.search_form .row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.col-4 {
+  flex: 0 0 auto;
+  width: 15%;
+  button {
+    width: 200px;
+    color: #fff;
+    &:hover {
+      color: #2f2222;
+    }
+  }
+}
+
+.btn-warning {
+  color: #fff;
+  &:hover {
+    color: #2f2222;
+  }
+}
+
+.form-control {
+  background-color: #ffeac0;
+  color: #2f2222;
+  border: 3px solid #f3db01;
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: #ffeac0;
+    border: 3px solid #bbad30;
+    outline: 0;
+    outline-offset: 0;
+    box-shadow: none;
+  }
+}
+
+.card.film-list {
+  background-color: #c34949;
+  .card-header h3 {
+    color: #f3db01;
+    font-size: 40px;
+    padding-top: 10px;
+  }
+  .card-body .card {
+    background-color: #2f2222;
+    margin: 6px;
+    color: #fff;
+    padding: 10px;
+    &.col-3 {
+      width: 24%;
+    }
+    button {
+      color: #fff;
+      &:hover {
+        color: #2f2222;
+      }
+    }
+  }
+}
+
+.film-info {
+  .main-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: right;
+    h3 {
+      font-size: 35px;
+    }
+  }
+  .poster-info {
+    display: flex;
+    justify-content: space-around;
+    align-self: center;
+  }
+  .img-wrap {
+    width: 50%;
+    // margin-left: auto;
+    // margin-right: auto;
+    max-width: 50%;
+    margin-bottom: 15px;
+  }
+  img {
+    padding-top: 5px;
+
+    max-height: 300px;
+    object-fit: cover;
+    display: block;
+  }
+  .plot {
+    margin-bottom: 15px;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-style: italic;
+    text-overflow: ellipsis;
+  }
+}
+
+.cursive-title {
+  font-size: 20px;
+  padding-right: 3px;
+  font-style: italic;
+}

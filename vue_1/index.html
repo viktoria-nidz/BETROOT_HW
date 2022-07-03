@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <title>Vue.js</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="container">
+        <div class="row">
+          <div class="col-3"></div>
+          <div class="col-6">
+            <div class="card">
+              <div class="card-header">
+                <h3>To do List</h3>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-8">
+                    <input
+                      type="text"
+                      class="form-control"
+                      v-model.trim="taskText"
+                    />
+                  </div>
+                  <div class="col-4">
+                    <button
+                      type="button"
+                      @click="addToDo"
+                      class="btn btn-success"
+                    >
+                      Add
+                    </button>
+                  </div>
+                </div>
+
+                <ul class="mt-4">
+                  <li
+                    v-for="(item, index) in todoList"
+                    :key="index"
+                    class="d-flex justify-content-between align-items-center mb-2"
+                  >
+                    {{item.text}}
+                    <span v-if="item.isDone" class="badge bg-success"
+                      >DONE</span
+                    >
+                    <span v-else class="badge bg-danger">NOT DONE</span>
+                    <button
+                      type="button"
+                      class="btn btn-info btn-sm"
+                      :disabled="item.isDone"
+                      @click="markDone(index)"
+                    >
+                      I did it.
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-3"></div>
+        </div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="assets/main.js"></script>
+  </body>
+</html>
