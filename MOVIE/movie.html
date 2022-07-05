@@ -21,72 +21,106 @@
     <title>MOVIE</title>
   </head>
   <body>
-    <!-- START MENU  -->
-    <header id="myheader">
-      <div id="header-wrap" class="mycontainer">
-        <div class="logo">
-          <a href="#"> <img src="assets/images/logo.png" alt="logo" /></a>
-        </div>
-        <ul
-          itemscope
-          itemtype="http://shema.org/SiteNavigationElement"
-          class="main_menu"
-        >
-          <li><a itemprop="url" href="#"> How to Use</a></li>
-          <li><a itemprop="url" href="#">Search Movies </a></li>
-          <li><a itemprop="url" href="#"> Favorite</a></li>
-          <li><a itemprop="url" href="#"> Contact</a></li>
-        </ul>
-
-        <ul class="social_networks main">
-          <li>
-            <a
-              title="facebook"
-              href="https://www.facebook.com/"
-              target="_blank"
-              rel="noopenner noreferrer"
-              ><span class="iconify" data-icon="brandico:facebook"></span>
-            </a>
-          </li>
-
-          <li>
-            <a
-              title="twitter"
-              href="https://twitter.com/home?lang=uk"
-              target="_blank"
-              rel="noopenner noreferrer"
-              ><span class="iconify" data-icon="akar-icons:twitter-fill"></span>
-            </a>
-          </li>
-
-          <li>
-            <a
-              title="instagram"
-              href="https://www.instagram.com/"
-              target="_blank"
-              rel="noopenner noreferrer"
-            >
-              <span class="iconify" data-icon="akar-icons:instagram-fill"></span
-            ></a>
-          </li>
-        </ul>
-      </div>
-    </header>
-
-    <!-- FINISH MENU -->
     <div id="app">
-      <div class="container pt-4">
+      <!-- START MENU  -->
+      <header id="myheader">
+        <div id="header-wrap" class="mycontainer">
+          <div class="logo">
+            <a href="#"> <img src="assets/images/logo.png" alt="logo" /></a>
+          </div>
+          <ul
+            itemscope
+            itemtype="http://shema.org/SiteNavigationElement"
+            class="main_menu"
+          >
+            <li><a itemprop="url" href="#"> How to Use</a></li>
+            <li><a itemprop="url" href="#">Search Movies </a></li>
+            <li>
+              <a itemprop="url" href="#">
+                <button @click="showFavorite=true">Favorite</button></a
+              >
+            </li>
+            <li><a itemprop="url" href="#"> Contact</a></li>
+          </ul>
+
+          <ul class="social_networks main">
+            <li>
+              <a
+                title="facebook"
+                href="https://www.facebook.com/"
+                target="_blank"
+                rel="noopenner noreferrer"
+                ><span class="iconify" data-icon="brandico:facebook"></span>
+              </a>
+            </li>
+
+            <li>
+              <a
+                title="twitter"
+                href="https://twitter.com/home?lang=uk"
+                target="_blank"
+                rel="noopenner noreferrer"
+                ><span
+                  class="iconify"
+                  data-icon="akar-icons:twitter-fill"
+                ></span>
+              </a>
+            </li>
+
+            <li>
+              <a
+                title="instagram"
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noopenner noreferrer"
+              >
+                <span
+                  class="iconify"
+                  data-icon="akar-icons:instagram-fill"
+                ></span
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </header>
+
+      <!-- FINISH MENU -->
+
+      <div class="container main-page pt-4">
         <div class="card wrap-color mb-4">
           <div class="card-body wrap-color">
             <form id="search_form" @submit.prevent="searchMovies">
               <div class="row">
-                <div class="col-8">
+                <div class="col-5">
                   <input
                     type="search"
                     class="form-control"
                     placeholder="Enter movie title"
                     v-model="search"
                   />
+                </div>
+                <div class="col-2">
+                  <input
+                    type="number"
+                    class="form-control"
+                    placeholder="Enter movie year"
+                    v-model="year"
+                    min="1000"
+                    max="3000"
+                  />
+                </div>
+
+                <div class="col-4">
+                  <select
+                    v-model="movieType"
+                    class="form-select"
+                    aria-label=" select example"
+                  >
+                    <option selected>Choose type</option>
+                    <option value="series">Series</option>
+                    <option value="movie">Movie</option>
+                    <option value="episode">Episode</option>
+                  </select>
                 </div>
                 <div class="col-4">
                   <button type="submit" class="btn btn-warning">SEARCH</button>
@@ -100,12 +134,17 @@
             <h3>Movies List</h3>
           </div>
           <div class="card-body row">
-            <div
-              class="card col-3"
-              v-for="movie in movieList"
-              :key="movie.imBdID"
+            <template
+              v-for="movie in   moviesAndFavorites()"
+              :key="movie.imbdID  "
             >
-              <img
+              <movie-item
+                :movie="movie"
+                @get-movie-info="getMovieInfo"
+                @add-to-favorites="addToFavorites"
+              />
+
+              <!-- <img
                 :src="movie.Poster"
                 class="card-img-top"
                 :alt="movie.Title"
@@ -113,70 +152,231 @@
               <div class="card-body">
                 <h5 class="card-title">{{movie.Title}}</h5>
                 <p class="card-text">{{movie.Year}}</p>
-                <button
-                  type="button"
-                  class="btn btn-warning"
-                  @click="getMovieInfo(movie.imdbID)"
-                >
-                  MORE INFO
-                </button>
+                <div class="card-buttons">
+                  <button
+                    type="button"
+                    class="btn btn-warning"
+                    @click="getMovieInfo(movie.imdbID)"
+                  >
+                    MORE INFO
+                  </button>
+                  <div
+                    class="favorite-adder"
+                    @click="addToFavorites(movie.imdbID)"
+                  > -->
+              <!-- <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="35"
+                      height="35"
+                      :fill="movie.inFav ? '#f00' : '#fff'"
+                      class="bi bi-bookmark-heart"
+                      viewbox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"
+                      />
+                      <path
+                        d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div> -->
+            </template>
+            <!-- FAVORITES LIST -->
+            <div class="favorite-section" v-if="showFavorite ">
+              <div class="card-header">
+                <h3>Favorite Movies</h3>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="modal_overlay" v-if="showModal">
-        <div class="myModal">
-          <div class="film-info">
-            <div class="poster-info">
-              <div class="img-wrap">
-                <img
-                  :src="movieInfo.Poster"
-                  class="card-img-top"
-                  :alt="movieInfo.Title"
-                />
+              <!-- <div
+                class="card col-3"
+                v-for="movie in favorites"
+                :key="movie.imbdID"
+              > -->
+              <!-- <div class="card-body"> -->
+              <!-- <img
+                    :src="movie.Poster"
+                    class="card-img-top"
+                    :alt="movie.Title"
+                  /> -->
+              <div class="card-body row">
+                <template v-for="movie in favorites" :key="movie.imbdID">
+                  <movie-item
+                    :movie="movie"
+                    @get-movie-info="getMovieInfo"
+                    @add-to-favorites="addToFavorites"
+                  />
+                </template>
+                <!-- <h5 class="card-title">{{movie.Title}}</h5>
+                    <p class="card-text">{{movie.Year}}</p>
+                    <div class="card-buttons">
+                      <button
+                        type="button"
+                        class="btn btn-warning"
+                        @click="getMovieInfo(movie.imdbID)"
+                      >
+                        MORE INFO
+                      </button>
+                      <div
+                        class="favorite-adder"
+                        @click="addToFavorites(movie.imdbID)"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="35"
+                          height="35"
+                          :fill="movie.inFav ? '#f00' : '#fff'"
+                          class="bi bi-bookmark-heart"
+                          viewbox="0 0 16 16"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"
+                          />
+                          <path
+                            d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"
+                          />
+                        </svg> -->
+                <!-- </div> -->
+                <!-- </div> 
+                  </div> -->
+                <!-- </div> -->
+                <!-- END FAVORITES -->
               </div>
-              <div class="main-info">
-                <h3>{{movieInfo.Title}}</h3>
-                <div>
-                  <span class="cursive-title"> Genre: </span>
-                  {{movieInfo.Genre}}
-                </div>
-                <div>
-                  <span class="cursive-title">Year:</span> {{movieInfo.Year}}
-                </div>
-                <div>
-                  <span class="cursive-title">Runtime:</span>
-                  {{movieInfo.Runtime}}
-                </div>
-                <div>
-                  <span class="cursive-title">Director:</span>
-                  {{movieInfo.Director}}
-                </div>
-                <div>
-                  <span class="cursive-title">Rating:</span>
-                  {{movieInfo.imdbRating}}
-                </div>
-                <div>
-                  <span class="cursive-title">Votes:</span>
-                  {{movieInfo.imdbVotes}}
-                </div>
-              </div>
-            </div>
+              <div class="modal_overlay" v-if="showModal">
+                <div class="myModal">
+                  <div class="film-info">
+                    <div class="poster-info">
+                      <div class="img-wrap">
+                        <img
+                          :src="movieInfo.Poster"
+                          class="card-img-top"
+                          :alt="movieInfo.Title"
+                        />
+                      </div>
+                      <div class="main-info">
+                        <h3>{{movieInfo.Title}}</h3>
+                        <div v-if="movieInfo.Genre!== 'N/A'">
+                          <span class="cursive-title"> Genre: </span>
+                          {{movieInfo.Genre}}
+                        </div>
+                        <div v-else>
+                          <span class="cursive-title">Genre:</span>
+                          Info not found
+                        </div>
+                        <div v-if="movieInfo.Year!== 'N/A'">
+                          <span class="cursive-title">Year:</span>
+                          {{movieInfo.Year}}
+                        </div>
+                        <div v-else>
+                          <span class="cursive-title">Year:</span>
+                          Info not found
+                        </div>
+                        <div v-if="movieInfo.Runtime!== 'N/A'">
+                          <span class="cursive-title">Runtime:</span>
+                          {{movieInfo.Runtime}}
+                        </div>
+                        <div v-else>
+                          <span class="cursive-title">Runtime:</span>
+                          Info not found
+                        </div>
+                        <div v-if="movieInfo.Director!== 'N/A'">
+                          <span class="cursive-title">Director:</span>
+                          {{movieInfo.Director}}
+                        </div>
+                        <div v-else>
+                          <span class="cursive-title">Director:</span>
+                          Info not found
+                        </div>
+                        <div v-if="movieInfo.imdbRating!== 'N/A'">
+                          <span class="cursive-title">Rating:</span>
+                          {{movieInfo.imdbRating}}
+                        </div>
+                        <div v-else>
+                          <span class="cursive-title">Rating:</span>
+                          Info not found
+                        </div>
+                        <div v-if="movieInfo.imdbVotes!== 'N/A'">
+                          <span class="cursive-title">Votes:</span>
+                          {{movieInfo.imdbVotes}}
+                        </div>
+                        <div v-else>
+                          <span class="cursive-title">Votes:</span>
+                          Info not found
+                        </div>
+                      </div>
+                    </div>
 
-            <h4>About</h4>
-            <div class="plot">{{movieInfo.Plot}}</div>
+                    <h4>About</h4>
+                    <div v-if="movieInfo.Plot !== 'N/A'" class="plot">
+                      {{movieInfo.Plot}}
+                    </div>
+                    <div v-else>Info not found</div>
+                  </div>
+                  <button
+                    type="button"
+                    class="btn btn-warning"
+                    @click="showModal=false"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
-          <button
-            type="button"
-            class="btn btn-warning"
-            @click="showModal=false"
-          >
-            Close
-          </button>
         </div>
       </div>
     </div>
+
+    <template id="movieItem">
+      <div class="card col-3">
+        <img
+          :src="movie.Poster"
+          class="card-img-top"
+          :alt="movie.Title"
+          v-if="movie.Poster !== 'N/A'"
+        />
+        <img
+          v-else
+          src="assets/images/notFound.jpg"
+          alt="Not found movie poster"
+        />
+
+        <div class="card-body">
+          <h5 class="card-title">{{movie.Title}}</h5>
+          <p class="card-text">{{movie.Year}}</p>
+          <div class="card-buttons">
+            <button
+              type="button"
+              class="btn btn-warning"
+              @click="getMovieInfo(movie.imdbID)"
+            >
+              MORE INFO
+            </button>
+            <div class="favorite-adder" @click="addToFavorites(movie.imdbID)">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="35"
+                height="35"
+                :fill="movie.inFav ? '#f00' : '#fff'"
+                class="bi bi-bookmark-heart"
+                viewbox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"
+                />
+                <path
+                  d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>
+
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/vue@next"></script>

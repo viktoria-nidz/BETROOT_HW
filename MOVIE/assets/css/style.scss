@@ -4,8 +4,8 @@ body {
 
 #app {
   font-family: "Josefin Sans", sans-serif;
-  padding-top: 95px;
 }
+
 .modal_overlay {
   position: fixed;
   left: 0;
@@ -88,6 +88,20 @@ body {
   cursor: pointer;
   position: relative;
   color: #ffffff;
+  text-decoration: none;
+  &:hover {
+    color: #f3db01;
+  }
+}
+#myheader .main_menu li a button {
+  cursor: pointer;
+  position: relative;
+  color: #ffffff;
+  background-color: transparent;
+  border: none;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 600;
   text-decoration: none;
   &:hover {
     color: #f3db01;
@@ -179,7 +193,8 @@ svg {
   }
 }
 
-.form-control {
+.form-control,
+.form-select {
   background-color: #ffeac0;
   color: #2f2222;
   border: 3px solid #f3db01;
@@ -223,15 +238,18 @@ svg {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: right;
+
+    // align-items: right;
     h3 {
-      font-size: 35px;
+      font-size: 30px;
     }
   }
   .poster-info {
+    width: 100%;
+    gap: 30px;
     display: flex;
-    justify-content: space-around;
-    align-self: center;
+    justify-content: space-between;
+    align-items: center;
   }
   .img-wrap {
     width: 50%;
@@ -262,4 +280,19 @@ svg {
   font-size: 20px;
   padding-right: 3px;
   font-style: italic;
+}
+
+.card-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+.main-page.container {
+  padding-top: 95px !important;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  vertical-align: top;
+  object-fit: cover;
 }
