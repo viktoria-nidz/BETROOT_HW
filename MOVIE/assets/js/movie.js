@@ -17,23 +17,24 @@ const App = {
       API_KEY: "bf99cef6",
       search: "",
       year: "",
-      movieType: "Choose type",
+      movieType: "Type",
       movieList: [],
       movieInfo: {},
       showModal: false,
       showFavorite: false,
       favorites: [],
-
-      storage: {},
+      totalPages: 0,
+      page: 1,
+      hamburgerControl: "disable",
+      sideBlockControl: "closed",
+      theme: "dark",
+      perPage: 10,
+      pageCutLow: 1,
+      pageCutHigh: 1,
     };
   },
   created() {
-    const localFavoritesList = localStorage.getItem("favorites list");
-    this.storage = JSON.parse(localFavoritesList);
-    localFavoritesList;
-    for (key in this.storage) {
-      this.favorites.push(this.storage[key]);
-    }
+    this.favorites = JSON.parse(localStorage.getItem("favorites list"));
   },
   components: {
     movieItem,
@@ -48,9 +49,10 @@ const App = {
         // Make a request for a user with a given ID
         axios
           .get(
-            `http://www.omdbapi.com/?apikey=${this.API_KEY}&s=${this.search}&y=${this.year}&type=${this.movieType}`
+            `http://www.omdbapi.com/?apikey=${this.API_KEY}&s=${this.search}&y=${this.year}&type=${this.movieType}&page=${this.page}`
           )
           .then((response) => {
+            this.totalPages = Math.ceil(response.data.totalResults / 10);
             this.movieList = response.data.Search;
           })
           .catch(function (error) {
@@ -64,9 +66,10 @@ const App = {
         // Make a request for a user with a given ID
         axios
           .get(
-            `http://www.omdbapi.com/?apikey=${this.API_KEY}&s=${this.search}&y=${this.year}`
+            `http://www.omdbapi.com/?apikey=${this.API_KEY}&s=${this.search}&y=${this.year}&page=${this.page}`
           )
           .then((response) => {
+            this.totalPages = Math.ceil(response.data.totalResults / 10);
             this.movieList = response.data.Search;
           })
           .catch(function (error) {
@@ -80,9 +83,10 @@ const App = {
         // Make a request for a user with a given ID
         axios
           .get(
-            `http://www.omdbapi.com/?apikey=${this.API_KEY}&s=${this.search}&type=${this.movieType}`
+            `http://www.omdbapi.com/?apikey=${this.API_KEY}&s=${this.search}&type=${this.movieType}&page=${this.page}`
           )
           .then((response) => {
+            this.totalPages = Math.ceil(response.data.totalResults / 10);
             this.movieList = response.data.Search;
           })
           .catch(function (error) {
@@ -96,9 +100,10 @@ const App = {
         // Make a request for a user with a given ID
         axios
           .get(
-            `http://www.omdbapi.com/?apikey=${this.API_KEY}&s=${this.search}`
+            `http://www.omdbapi.com/?apikey=${this.API_KEY}&s=${this.search}&page=${this.page}`
           )
           .then((response) => {
+            this.totalPages = Math.ceil(response.data.totalResults / 10);
             this.movieList = response.data.Search;
           })
           .catch(function (error) {
@@ -110,12 +115,7 @@ const App = {
           });
       }
     },
-    showMovieInfo() {
-      this.showModal = true;
-    },
-    showFavoriteList() {
-      this.showFavorite = true;
-    },
+
     getMovieInfo(movieID) {
       // Make a request for a user with a given ID
       axios
@@ -133,6 +133,12 @@ const App = {
         .then(function () {
           // always executed
         });
+    },
+    showMovieInfo() {
+      this.showModal = true;
+    },
+    showFavoriteList() {
+      this.showFavorite = true;
     },
 
     addToFavorites(movieID) {
@@ -160,6 +166,55 @@ const App = {
         movieArr.push(el);
       });
       return movieArr;
+    },
+    changeTheme() {
+      if (this.theme === "dark") {
+        this.theme = "light";
+      } else {
+        this.theme = "dark";
+      }
+      this.setCookie("my-color-theme", this.theme);
+    },
+    goToPage(pageNum) {
+      this.page = pageNum;
+      this.searchMovies();
+    },
+    // COOKIES START
+    setCookie(name, value, days) {
+      var expires = "";
+      if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+        expires = "; expires=" + date.toUTCString();
+      }
+      document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    },
+    getCookie(name) {
+      var nameEQ = name + "=";
+      var ca = document.cookie.split(";");
+      for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == " ") c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+      }
+      return null;
+    },
+    eraseCookie(name) {
+      document.cookie =
+        name + "=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;";
+    },
+    // COOKIIES END
+    burgerStates() {
+      if (this.hamburgerControl === "disable") {
+        this.hamburgerControl = "is-active";
+      } else {
+        this.hamburgerControl = "disable";
+      }
+      if (this.sideBlockControl === "closed") {
+        this.sideBlockControl = "open";
+      } else {
+        this.sideBlockControl = "closed";
+      }
     },
   },
 };

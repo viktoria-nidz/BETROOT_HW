@@ -18,23 +18,24 @@ var App = {
       API_KEY: "bf99cef6",
       search: "",
       year: "",
-      movieType: "Choose type",
+      movieType: "Type",
       movieList: [],
       movieInfo: {},
       showModal: false,
       showFavorite: false,
       favorites: [],
-      storage: {}
+      totalPages: 0,
+      page: 1,
+      hamburgerControl: "disable",
+      sideBlockControl: "closed",
+      theme: "dark",
+      perPage: 10,
+      pageCutLow: 1,
+      pageCutHigh: 1
     };
   },
   created: function created() {
-    var localFavoritesList = localStorage.getItem("favorites list");
-    this.storage = JSON.parse(localFavoritesList);
-    localFavoritesList;
-
-    for (key in this.storage) {
-      this.favorites.push(this.storage[key]);
-    }
+    this.favorites = JSON.parse(localStorage.getItem("favorites list"));
   },
   components: {
     movieItem: movieItem
@@ -45,7 +46,8 @@ var App = {
 
       if (this.search !== "" && this.year !== "" && this.movieType !== "Choose type") {
         // Make a request for a user with a given ID
-        axios.get("http://www.omdbapi.com/?apikey=".concat(this.API_KEY, "&s=").concat(this.search, "&y=").concat(this.year, "&type=").concat(this.movieType)).then(function (response) {
+        axios.get("http://www.omdbapi.com/?apikey=".concat(this.API_KEY, "&s=").concat(this.search, "&y=").concat(this.year, "&type=").concat(this.movieType, "&page=").concat(this.page)).then(function (response) {
+          _this.totalPages = Math.ceil(response.data.totalResults / 10);
           _this.movieList = response.data.Search;
         })["catch"](function (error) {
           // handle error
@@ -54,7 +56,8 @@ var App = {
         });
       } else if (this.search !== "" && this.year !== "") {
         // Make a request for a user with a given ID
-        axios.get("http://www.omdbapi.com/?apikey=".concat(this.API_KEY, "&s=").concat(this.search, "&y=").concat(this.year)).then(function (response) {
+        axios.get("http://www.omdbapi.com/?apikey=".concat(this.API_KEY, "&s=").concat(this.search, "&y=").concat(this.year, "&page=").concat(this.page)).then(function (response) {
+          _this.totalPages = Math.ceil(response.data.totalResults / 10);
           _this.movieList = response.data.Search;
         })["catch"](function (error) {
           // handle error
@@ -63,7 +66,8 @@ var App = {
         });
       } else if (this.search !== "" && this.movieType !== "Choose type") {
         // Make a request for a user with a given ID
-        axios.get("http://www.omdbapi.com/?apikey=".concat(this.API_KEY, "&s=").concat(this.search, "&type=").concat(this.movieType)).then(function (response) {
+        axios.get("http://www.omdbapi.com/?apikey=".concat(this.API_KEY, "&s=").concat(this.search, "&type=").concat(this.movieType, "&page=").concat(this.page)).then(function (response) {
+          _this.totalPages = Math.ceil(response.data.totalResults / 10);
           _this.movieList = response.data.Search;
         })["catch"](function (error) {
           // handle error
@@ -72,7 +76,8 @@ var App = {
         });
       } else if (this.search !== "") {
         // Make a request for a user with a given ID
-        axios.get("http://www.omdbapi.com/?apikey=".concat(this.API_KEY, "&s=").concat(this.search)).then(function (response) {
+        axios.get("http://www.omdbapi.com/?apikey=".concat(this.API_KEY, "&s=").concat(this.search, "&page=").concat(this.page)).then(function (response) {
+          _this.totalPages = Math.ceil(response.data.totalResults / 10);
           _this.movieList = response.data.Search;
         })["catch"](function (error) {
           // handle error
@@ -80,12 +85,6 @@ var App = {
         }).then(function () {// always executed
         });
       }
-    },
-    showMovieInfo: function showMovieInfo() {
-      this.showModal = true;
-    },
-    showFavoriteList: function showFavoriteList() {
-      this.showFavorite = true;
     },
     getMovieInfo: function getMovieInfo(movieID) {
       var _this2 = this;
@@ -100,6 +99,12 @@ var App = {
         console.log(error);
       }).then(function () {// always executed
       });
+    },
+    showMovieInfo: function showMovieInfo() {
+      this.showModal = true;
+    },
+    showFavoriteList: function showFavoriteList() {
+      this.showFavorite = true;
     },
     addToFavorites: function addToFavorites(movieID) {
       var movieIndex = this.movieList.findIndex(function (el) {
@@ -130,6 +135,64 @@ var App = {
         movieArr.push(el);
       });
       return movieArr;
+    },
+    changeTheme: function changeTheme() {
+      if (this.theme === "dark") {
+        this.theme = "light";
+      } else {
+        this.theme = "dark";
+      }
+
+      this.setCookie("my-color-theme", this.theme);
+    },
+    goToPage: function goToPage(pageNum) {
+      this.page = pageNum;
+      this.searchMovies();
+    },
+    // COOKIES START
+    setCookie: function setCookie(name, value, days) {
+      var expires = "";
+
+      if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+        expires = "; expires=" + date.toUTCString();
+      }
+
+      document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    },
+    getCookie: function getCookie(name) {
+      var nameEQ = name + "=";
+      var ca = document.cookie.split(";");
+
+      for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+
+        while (c.charAt(0) == " ") {
+          c = c.substring(1, c.length);
+        }
+
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+      }
+
+      return null;
+    },
+    eraseCookie: function eraseCookie(name) {
+      document.cookie = name + "=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;";
+    },
+    // COOKIIES END
+    burgerStates: function burgerStates() {
+      if (this.hamburgerControl === "disable") {
+        this.hamburgerControl = "is-active";
+      } else {
+        this.hamburgerControl = "disable";
+      }
+
+      if (this.sideBlockControl === "closed") {
+        this.sideBlockControl = "open";
+      } else {
+        this.sideBlockControl = "closed";
+      }
     }
   }
 };

@@ -6,6 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16x16.png">
+<link rel="manifest" href="assets/images/favicon/site.webmanifest">
+<link rel="mask-icon" href="assets/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="assets/images/favicon/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="assets/images/favicon/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
     <link
       href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,700;1,300;1,400;1,700&display=swap"
       rel="stylesheet"
@@ -16,19 +25,60 @@
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="assets/css/hamburgers.min.css" />
+    <link rel="stylesheet" href="assets/css/lightTheme.min.css">
 
     <link rel="stylesheet" href="assets/css/style.min.css" />
-    <title>MOVIE</title>
+    <title>Movies | Main</title>
   </head>
-  <body>
+  <body >
     <div id="app">
+   
+      <div id="page"  :class="theme">
+        <div class="page-overlay"  @click="burgerStates" :class="sideBlockControl"></div>
+        <div id="side-block"  :class="sideBlockControl">
+          <div class="wrapper">
+            <nav id="mobile-menu">
+              <div class="hamb-menu"  @click="burgerStates">
+                <button class="hamburger hamburger--elastic" :class="hamburgerControl" type="button">
+                  <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                  </span>
+                </button>
+              </div>
+              <ul
+              itemscope
+              itemtype="http://shema.org/SiteNavigationElement"
+              class="phone_menu "
+            >
+              <li><a   @click="burgerStates" itemprop="url" href="#"> How to Use</a></li>
+              <li><a  @click="burgerStates" itemprop="url" href="#">Search Movies </a></li>
+              <li>
+                <a   @click="burgerStates" itemprop="url" href="#favorites">
+                  <button @click="showFavorite=true">Favorite</button></a
+                >
+              </li>
+              <li><a  @click="burgerStates" itemprop="url" href="#"> Contact</a></li>
+            </ul>
+                <!-- CHANGE THEME -->
+  <div  class="card__header__switch mobile">
+    <input  @click="changeTheme" type="checkbox" id="switcher" />
+    <label for="switcher">Toggle</label>
+    <span class="theme-changer-title mobile">Change Theme</span>
+  </div>
+  <!-- END CHANGE THEME -->
+            </nav>
+          </div>
+        </div>
+  
       <!-- START MENU  -->
       <header id="myheader">
         <div id="header-wrap" class="mycontainer">
           <div class="logo">
             <a href="#"> <img src="assets/images/logo.png" alt="logo" /></a>
           </div>
-          <ul
+          <div id="main_menu">
+            <ul
             itemscope
             itemtype="http://shema.org/SiteNavigationElement"
             class="main_menu"
@@ -36,104 +86,91 @@
             <li><a itemprop="url" href="#"> How to Use</a></li>
             <li><a itemprop="url" href="#">Search Movies </a></li>
             <li>
-              <a itemprop="url" href="#">
+              <a itemprop="url" href="#favorites">
                 <button @click="showFavorite=true">Favorite</button></a
               >
             </li>
             <li><a itemprop="url" href="#"> Contact</a></li>
           </ul>
-
-          <ul class="social_networks main">
-            <li>
-              <a
-                title="facebook"
-                href="https://www.facebook.com/"
-                target="_blank"
-                rel="noopenner noreferrer"
-                ><span class="iconify" data-icon="brandico:facebook"></span>
-              </a>
-            </li>
-
-            <li>
-              <a
-                title="twitter"
-                href="https://twitter.com/home?lang=uk"
-                target="_blank"
-                rel="noopenner noreferrer"
-                ><span
-                  class="iconify"
-                  data-icon="akar-icons:twitter-fill"
-                ></span>
-              </a>
-            </li>
-
-            <li>
-              <a
-                title="instagram"
-                href="https://www.instagram.com/"
-                target="_blank"
-                rel="noopenner noreferrer"
-              >
-                <span
-                  class="iconify"
-                  data-icon="akar-icons:instagram-fill"
-                ></span
-              ></a>
-            </li>
-          </ul>
+      
+          </div>
+        <div class="buttons-header">
+          <div class="hamb-menu" @click="burgerStates" >
+            <button class="hamburger hamburger--elastic" :class="hamburgerControl" type="button">
+              <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+              </span>
+            </button>
+          </div>
+<!-- CHANGE THEME -->
+<div  class="card__header__switch">
+  <input  @click="changeTheme" type="checkbox" id="switch" />
+  <label for="switch">Toggle</label>
+  <span class="theme-changer-title ">Change Theme</span>
+</div>
+<!-- END CHANGE THEME -->
+        </div>
+        
         </div>
       </header>
 
       <!-- FINISH MENU -->
 
       <div class="container main-page pt-4">
+
         <div class="card wrap-color mb-4">
           <div class="card-body wrap-color">
             <form id="search_form" @submit.prevent="searchMovies">
               <div class="row">
-                <div class="col-5">
+                <div class="col-5 long-input">
                   <input
                     type="search"
-                    class="form-control"
+                    class="form-control "
                     placeholder="Enter movie title"
                     v-model="search"
                   />
                 </div>
-                <div class="col-2">
+              
+                <div class="col-2 medium-settings">
                   <input
                     type="number"
                     class="form-control"
-                    placeholder="Enter movie year"
+                    placeholder="Year"
                     v-model="year"
                     min="1000"
                     max="3000"
                   />
                 </div>
 
-                <div class="col-4">
+                <div class="col-4 medium-settings">
                   <select
                     v-model="movieType"
                     class="form-select"
                     aria-label=" select example"
                   >
-                    <option selected>Choose type</option>
+                    <option selected>Type</option>
                     <option value="series">Series</option>
                     <option value="movie">Movie</option>
                     <option value="episode">Episode</option>
                   </select>
                 </div>
-                <div class="col-4">
-                  <button type="submit" class="btn btn-warning">SEARCH</button>
+                <div class="col-4 submit">
+                  <button type="submit" class="btn search-btn btn-warning">SEARCH</button>
                 </div>
-              </div>
+                </div>
+                  
+                
+               
+             
             </form>
           </div>
         </div>
         <div class="card film-list">
           <div class="card-header">
+           
             <h3>Movies List</h3>
           </div>
-          <div class="card-body row">
+          <div class="card-body row films">
             <template
               v-for="movie in   moviesAndFavorites()"
               :key="movie.imbdID  "
@@ -143,63 +180,81 @@
                 @get-movie-info="getMovieInfo"
                 @add-to-favorites="addToFavorites"
               />
-
-              <!-- <img
-                :src="movie.Poster"
-                class="card-img-top"
-                :alt="movie.Title"
-              />
-              <div class="card-body">
-                <h5 class="card-title">{{movie.Title}}</h5>
-                <p class="card-text">{{movie.Year}}</p>
-                <div class="card-buttons">
-                  <button
-                    type="button"
-                    class="btn btn-warning"
-                    @click="getMovieInfo(movie.imdbID)"
-                  >
-                    MORE INFO
-                  </button>
-                  <div
-                    class="favorite-adder"
-                    @click="addToFavorites(movie.imdbID)"
-                  > -->
-              <!-- <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="35"
-                      height="35"
-                      :fill="movie.inFav ? '#f00' : '#fff'"
-                      class="bi bi-bookmark-heart"
-                      viewbox="0 0 16 16"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"
-                      />
-                      <path
-                        d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"
-                      />
-                    </svg>
-                  </div>
-                </div>
-              </div> -->
             </template>
+            <!-- PAGINATION START -->
+            <nav aria-label="Page navigation example">
+              <div v-if="totalPages>1" class="pages-counter"> Page: {{this.page}}</div>
+              <ul class="pagination" v-if="totalPages > 1">
+               
+                <li class="page-item">
+                  <a
+                    v-if="page > 1"
+                    class="page-link"
+                    href="#"
+                    aria-label="Previous"
+                    @click="goToPage(page-1)"
+                  >
+                    <span aria-hidden="true"> &laquo; Previous</span>
+                  </a>
+                </li>
+                <!-- TO SHOW ALL IF THERE TO 6 PAGES -->
+                <li
+                  v-for="page in totalPages"
+                  :key="page"
+                  v-if="totalPages < 6"
+                  class="page-item six-list"
+                >
+                  <a @click="goToPage(page)" class="page-link" href="#"
+                    >{{page}}</a
+                  >
+                </li>
+
+                <!-- IF WE HAVE MORE RHAN 6 PAGES: -->
+
+              
+                
+                <li v-else if="page > 3" class="page-item">
+                  <li
+                  v-for="page in 6"
+                  :key="page"
+  
+                  class="page-item  six-list"
+                >
+                  <a @click="goToPage(page)" class="page-link" href="#"
+                    >{{page}}</a
+                  >
+                </li>
+                <li>   <a class="page-link" href="#"
+                  >...</a
+                ></li>
+                
+                </li>
+
+
+                <li if="page < totalPages-1" class="page-item">
+                  <a @click="goToPage(totalPages)" class="page-link" href="#"
+                    >{{this.totalPages}}</a
+                  >
+                </li>
+
+                <li v-if="page < totalPages"   @click="goToPage(page+1)" class="page-item">
+                  <a class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true"> Next &raquo;</span>
+                    <br>
+                 
+                    
+                  </a>
+                </li>
+              </ul>
+            </nav>
+
+            <!-- PAGINATION END -->
+
             <!-- FAVORITES LIST -->
-            <div class="favorite-section" v-if="showFavorite ">
+            <div id="favorites" class="favorite-section" v-if="showFavorite ">
               <div class="card-header">
                 <h3>Favorite Movies</h3>
               </div>
-              <!-- <div
-                class="card col-3"
-                v-for="movie in favorites"
-                :key="movie.imbdID"
-              > -->
-              <!-- <div class="card-body"> -->
-              <!-- <img
-                    :src="movie.Poster"
-                    class="card-img-top"
-                    :alt="movie.Title"
-                  /> -->
               <div class="card-body row">
                 <template v-for="movie in favorites" :key="movie.imbdID">
                   <movie-item
@@ -208,42 +263,10 @@
                     @add-to-favorites="addToFavorites"
                   />
                 </template>
-                <!-- <h5 class="card-title">{{movie.Title}}</h5>
-                    <p class="card-text">{{movie.Year}}</p>
-                    <div class="card-buttons">
-                      <button
-                        type="button"
-                        class="btn btn-warning"
-                        @click="getMovieInfo(movie.imdbID)"
-                      >
-                        MORE INFO
-                      </button>
-                      <div
-                        class="favorite-adder"
-                        @click="addToFavorites(movie.imdbID)"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="35"
-                          height="35"
-                          :fill="movie.inFav ? '#f00' : '#fff'"
-                          class="bi bi-bookmark-heart"
-                          viewbox="0 0 16 16"
-                        >
-                          <path
-                            fill-rule="evenodd"
-                            d="M8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"
-                          />
-                          <path
-                            d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"
-                          />
-                        </svg> -->
-                <!-- </div> -->
-                <!-- </div> 
-                  </div> -->
-                <!-- </div> -->
                 <!-- END FAVORITES -->
               </div>
+ 
+              <!-- MODAL START -->
               <div class="modal_overlay" v-if="showModal">
                 <div class="myModal">
                   <div class="film-info">
@@ -289,9 +312,14 @@
                           <span class="cursive-title">Director:</span>
                           Info not found
                         </div>
-                        <div v-if="movieInfo.imdbRating!== 'N/A'">
+                        <div class=" rating-title" v-if="movieInfo.imdbRating!== 'N/A'">
                           <span class="cursive-title">Rating:</span>
-                          {{movieInfo.imdbRating}}
+                          <div class="progress">
+                            <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" :style="{width: movieInfo.imdbRating*10 + '%'}" aria-valuenow="movieInfo.imdbRating" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                          <!-- <span class="progress-bar"></span> -->
+                          <!-- {{movieInfo.imdbRating}} -->
+
                         </div>
                         <div v-else>
                           <span class="cursive-title">Rating:</span>
@@ -326,7 +354,9 @@
             </div>
           </div>
         </div>
+        <!-- MODAL END -->
       </div>
+    </div>
     </div>
 
     <template id="movieItem">
@@ -374,6 +404,7 @@
             </div>
           </div>
         </div>
+
       </div>
     </template>
 

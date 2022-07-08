@@ -1,0 +1,189 @@
+#page.light {
+  background-color: #38686a;
+  min-height: 100vh;
+
+  .modal_overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+
+    .myModal {
+      background-color: #187795;
+      border: #cdc6ae 7px solid;
+      box-shadow: 5px 5px 5px 0px #2f2222, inset 7px 9px 15px 0px #2f2222,
+        13px 8px 13px 5px #2f2222;
+    }
+  }
+
+  // START menu
+
+  #myheader-wrap.mycontainer.scroll {
+    box-shadow: 0 0 5px #999;
+  }
+
+  #myheader .mycontainer {
+    background-color: #2589bd;
+  }
+
+  #myheader .main_menu li a {
+    color: #ffffff;
+    &:hover {
+      color: #2f2222;
+    }
+  }
+  #myheader .main_menu li a button {
+    color: #fff;
+    &:hover {
+      color: #2f2222;
+    }
+  }
+
+  #myheader .main_menu li a::before {
+    border: 1px solid #fff;
+  }
+  #myheader .main_menu li a:hover::before,
+  #myheader .main_menu li a:active::before {
+    background-color: #fff;
+  }
+
+  // FINISH MENU
+
+  .wrap-color {
+    background-color: #187795;
+  }
+
+  .col-4 {
+    button {
+      color: #fff;
+      &:hover {
+        color: #2f2222;
+      }
+    }
+  }
+
+  .btn-warning {
+    border: 6px;
+    background-color: #38686a;
+    border-color: #2589bd;
+    color: #fff;
+    &:hover {
+      color: #2f2222;
+    }
+  }
+
+  .form-control,
+  .form-select {
+    color: white;
+    background-color: #a3b4a2;
+    color: #2f2222;
+    border: 3px solid #cdc6ae;
+    &:active,
+    &:focus,
+    &:hover {
+      background-color: #a3b4a2;
+      border: 3px solid #cdc6ae;
+    }
+  }
+
+  .card.film-list {
+    background-color: #187795;
+    .card-header h3 {
+      color: #cdc6ae;
+    }
+    .card-body .card {
+      background-color: #a3b4a2;
+      color: #fff;
+      button {
+        color: #fff;
+        &:hover {
+          color: #a3b4a2;
+        }
+      }
+    }
+  }
+
+  .pages-counter {
+    border: 4px#CDC6AE solid;
+    background-color: #a3b4a2;
+  }
+  .search-btn {
+    background-color: #2589bd;
+    border: 4px solid #cdc6ae;
+  }
+  .pagination li a {
+    border: 4px #187795 solid;
+    background-color: #a3b4a2;
+    color: #052512;
+  }
+
+  .theme-changer-title {
+    color: #fff;
+  }
+
+  //HAMBURGER
+
+  #side-block {
+    background-color: #187795;
+    background-color: #38686a;
+    color: #fff;
+    &:hover {
+      color: #2f2222;
+    }
+    border-right: #2589bd 7px solid;
+  }
+
+  #side-block li a button {
+    color: #ffffff;
+    &:hover {
+      color: #99c5e5;
+    }
+  }
+  #side-block li a {
+    color: #ffffff;
+    &:hover {
+      color: #99c5e5;
+    }
+  }
+  .phone_menu li a::before {
+    content: "";
+    border: 1px solid #fff;
+  }
+  .phone_menu li a:hover::before,
+  .phone_menu li a:active::before {
+    background-color: #fff;
+  }
+  .hamburger.is-active .hamburger-inner,
+  .hamburger.is-active .hamburger-inner::after,
+  .hamburger.is-active .hamburger-inner::before {
+    background-color: #98dbff;
+  }
+}
+
+@media screen and (max-width: 670px) {
+  #page.light {
+    .hamb-menu {
+      color: #11435e;
+    }
+
+    .hamburger-inner,
+    .hamburger-inner::after,
+    .hamburger-inner::before {
+      background-color: #11435e;
+    }
+
+    .card__header__switch.mobile {
+      label {
+        background: #2f2222;
+      }
+      label:after {
+        background: #fff;
+      }
+
+      input:checked + label {
+        background: #393512;
+      }
+    }
+    .theme-changer-title.mobile {
+      color: #fff;
+    }
+  }
+}
+//END HAMBURGER
