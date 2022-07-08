@@ -49,7 +49,7 @@ const App = {
         // Make a request for a user with a given ID
         axios
           .get(
-            `http://www.omdbapi.com/?apikey=${this.API_KEY}&s=${this.search}&y=${this.year}&type=${this.movieType}&page=${this.page}`
+            `https://www.omdbapi.com/?apikey=${this.API_KEY}&s=${this.search}&y=${this.year}&type=${this.movieType}&page=${this.page}`
           )
           .then((response) => {
             this.totalPages = Math.ceil(response.data.totalResults / 10);
@@ -66,7 +66,7 @@ const App = {
         // Make a request for a user with a given ID
         axios
           .get(
-            `http://www.omdbapi.com/?apikey=${this.API_KEY}&s=${this.search}&y=${this.year}&page=${this.page}`
+            `https://www.omdbapi.com/?apikey=${this.API_KEY}&s=${this.search}&y=${this.year}&page=${this.page}`
           )
           .then((response) => {
             this.totalPages = Math.ceil(response.data.totalResults / 10);
@@ -83,7 +83,7 @@ const App = {
         // Make a request for a user with a given ID
         axios
           .get(
-            `http://www.omdbapi.com/?apikey=${this.API_KEY}&s=${this.search}&type=${this.movieType}&page=${this.page}`
+            `https://www.omdbapi.com/?apikey=${this.API_KEY}&s=${this.search}&type=${this.movieType}&page=${this.page}`
           )
           .then((response) => {
             this.totalPages = Math.ceil(response.data.totalResults / 10);
@@ -100,7 +100,7 @@ const App = {
         // Make a request for a user with a given ID
         axios
           .get(
-            `http://www.omdbapi.com/?apikey=${this.API_KEY}&s=${this.search}&page=${this.page}`
+            `https://www.omdbapi.com/?apikey=${this.API_KEY}&s=${this.search}&page=${this.page}`
           )
           .then((response) => {
             this.totalPages = Math.ceil(response.data.totalResults / 10);
@@ -120,7 +120,7 @@ const App = {
       // Make a request for a user with a given ID
       axios
         .get(
-          `http://www.omdbapi.com/?apikey=${this.API_KEY}&plot=full&i=${movieID}`
+          `https://www.omdbapi.com/?apikey=${this.API_KEY}&plot=full&i=${movieID}`
         )
         .then((response) => {
           this.movieInfo = response.data;

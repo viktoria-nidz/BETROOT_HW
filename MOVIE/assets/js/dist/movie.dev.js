@@ -46,7 +46,7 @@ var App = {
 
       if (this.search !== "" && this.year !== "" && this.movieType !== "Choose type") {
         // Make a request for a user with a given ID
-        axios.get("http://www.omdbapi.com/?apikey=".concat(this.API_KEY, "&s=").concat(this.search, "&y=").concat(this.year, "&type=").concat(this.movieType, "&page=").concat(this.page)).then(function (response) {
+        axios.get("https://www.omdbapi.com/?apikey=".concat(this.API_KEY, "&s=").concat(this.search, "&y=").concat(this.year, "&type=").concat(this.movieType, "&page=").concat(this.page)).then(function (response) {
           _this.totalPages = Math.ceil(response.data.totalResults / 10);
           _this.movieList = response.data.Search;
         })["catch"](function (error) {
@@ -56,7 +56,7 @@ var App = {
         });
       } else if (this.search !== "" && this.year !== "") {
         // Make a request for a user with a given ID
-        axios.get("http://www.omdbapi.com/?apikey=".concat(this.API_KEY, "&s=").concat(this.search, "&y=").concat(this.year, "&page=").concat(this.page)).then(function (response) {
+        axios.get("https://www.omdbapi.com/?apikey=".concat(this.API_KEY, "&s=").concat(this.search, "&y=").concat(this.year, "&page=").concat(this.page)).then(function (response) {
           _this.totalPages = Math.ceil(response.data.totalResults / 10);
           _this.movieList = response.data.Search;
         })["catch"](function (error) {
@@ -66,7 +66,7 @@ var App = {
         });
       } else if (this.search !== "" && this.movieType !== "Choose type") {
         // Make a request for a user with a given ID
-        axios.get("http://www.omdbapi.com/?apikey=".concat(this.API_KEY, "&s=").concat(this.search, "&type=").concat(this.movieType, "&page=").concat(this.page)).then(function (response) {
+        axios.get("https://www.omdbapi.com/?apikey=".concat(this.API_KEY, "&s=").concat(this.search, "&type=").concat(this.movieType, "&page=").concat(this.page)).then(function (response) {
           _this.totalPages = Math.ceil(response.data.totalResults / 10);
           _this.movieList = response.data.Search;
         })["catch"](function (error) {
@@ -76,7 +76,7 @@ var App = {
         });
       } else if (this.search !== "") {
         // Make a request for a user with a given ID
-        axios.get("http://www.omdbapi.com/?apikey=".concat(this.API_KEY, "&s=").concat(this.search, "&page=").concat(this.page)).then(function (response) {
+        axios.get("https://www.omdbapi.com/?apikey=".concat(this.API_KEY, "&s=").concat(this.search, "&page=").concat(this.page)).then(function (response) {
           _this.totalPages = Math.ceil(response.data.totalResults / 10);
           _this.movieList = response.data.Search;
         })["catch"](function (error) {
@@ -90,7 +90,7 @@ var App = {
       var _this2 = this;
 
       // Make a request for a user with a given ID
-      axios.get("http://www.omdbapi.com/?apikey=".concat(this.API_KEY, "&plot=full&i=").concat(movieID)).then(function (response) {
+      axios.get("https://www.omdbapi.com/?apikey=".concat(this.API_KEY, "&plot=full&i=").concat(movieID)).then(function (response) {
         _this2.movieInfo = response.data;
 
         _this2.showMovieInfo();
