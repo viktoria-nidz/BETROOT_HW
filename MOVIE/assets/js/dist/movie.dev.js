@@ -18,7 +18,7 @@ var App = {
       API_KEY: "bf99cef6",
       search: "",
       year: "",
-      movieType: "Type",
+      movieType: "movie",
       movieList: [],
       movieInfo: {},
       showModal: false,
@@ -44,7 +44,7 @@ var App = {
     searchMovies: function searchMovies() {
       var _this = this;
 
-      if (this.search !== "" && this.year !== "" && this.movieType !== "Choose type") {
+      if (this.search !== "") {
         // Make a request for a user with a given ID
         axios.get("https://www.omdbapi.com/?apikey=".concat(this.API_KEY, "&s=").concat(this.search, "&y=").concat(this.year, "&type=").concat(this.movieType, "&page=").concat(this.page)).then(function (response) {
           _this.totalPages = Math.ceil(response.data.totalResults / 10);
@@ -54,37 +54,59 @@ var App = {
           console.log(error);
         }).then(function () {// always executed
         });
-      } else if (this.search !== "") {
-        // Make a request for a user with a given ID
-        axios.get("https://www.omdbapi.com/?apikey=".concat(this.API_KEY, "&s=").concat(this.search, "&page=").concat(this.page)).then(function (response) {
-          _this.totalPages = Math.ceil(response.data.totalResults / 10);
-          _this.movieList = response.data.Search;
-        })["catch"](function (error) {
-          // handle error
-          console.log(error);
-        }).then(function () {// always executed
-        });
-      } else if (this.search !== "" && this.year !== "") {
-        // Make a request for a user with a given ID
-        axios.get("https://www.omdbapi.com/?apikey=".concat(this.API_KEY, "&s=").concat(this.search, "&y=").concat(this.year, "&page=").concat(this.page)).then(function (response) {
-          _this.totalPages = Math.ceil(response.data.totalResults / 10);
-          _this.movieList = response.data.Search;
-        })["catch"](function (error) {
-          // handle error
-          console.log(error);
-        }).then(function () {// always executed
-        });
-      } else if (this.search !== "" && this.movieType !== "Choose type") {
-        // Make a request for a user with a given ID
-        axios.get("https://www.omdbapi.com/?apikey=".concat(this.API_KEY, "&s=").concat(this.search, "&type=").concat(this.movieType, "&page=").concat(this.page)).then(function (response) {
-          _this.totalPages = Math.ceil(response.data.totalResults / 10);
-          _this.movieList = response.data.Search;
-        })["catch"](function (error) {
-          // handle error
-          console.log(error);
-        }).then(function () {// always executed
-        });
-      }
+      } // } else if (this.search !== "") {
+      //   // Make a request for a user with a given ID
+      //   axios
+      //     .get(
+      //       `https://www.omdbapi.com/?apikey=${this.API_KEY}&s=${this.search}&page=${this.page}`
+      //     )
+      //     .then((response) => {
+      //       this.totalPages = Math.ceil(response.data.totalResults / 10);
+      //       this.movieList = response.data.Search;
+      //     })
+      //     .catch(function (error) {
+      //       // handle error
+      //       console.log(error);
+      //     })
+      //     .then(function () {
+      //       // always executed
+      //     });
+      // } else if (this.search !== "" && this.year !== "") {
+      //   // Make a request for a user with a given ID
+      //   axios
+      //     .get(
+      //       `https://www.omdbapi.com/?apikey=${this.API_KEY}&s=${this.search}&y=${this.year}&page=${this.page}`
+      //     )
+      //     .then((response) => {
+      //       this.totalPages = Math.ceil(response.data.totalResults / 10);
+      //       this.movieList = response.data.Search;
+      //     })
+      //     .catch(function (error) {
+      //       // handle error
+      //       console.log(error);
+      //     })
+      //     .then(function () {
+      //       // always executed
+      //     });
+      // } else if (this.search !== "" && this.movieType !== "Choose type") {
+      //   // Make a request for a user with a given ID
+      //   axios
+      //     .get(
+      //       `https://www.omdbapi.com/?apikey=${this.API_KEY}&s=${this.search}&type=${this.movieType}&page=${this.page}`
+      //     )
+      //     .then((response) => {
+      //       this.totalPages = Math.ceil(response.data.totalResults / 10);
+      //       this.movieList = response.data.Search;
+      //     })
+      //     .catch(function (error) {
+      //       // handle error
+      //       console.log(error);
+      //     })
+      //     .then(function () {
+      //       // always executed
+      //     });
+      // }
+
     },
     getMovieInfo: function getMovieInfo(movieID) {
       var _this2 = this;
@@ -126,14 +148,18 @@ var App = {
       var _this3 = this;
 
       var movieArr = [];
-      this.movieList.forEach(function (el) {
-        var findFav = _this3.favorites.find(function (movie) {
-          return el.imdbID === movie.imdbID;
-        });
 
-        el.inFav = findFav !== undefined ? true : false;
-        movieArr.push(el);
-      });
+      if (this.movieList !== []) {
+        this.movieList.forEach(function (el) {
+          var findFav = _this3.favorites.find(function (movie) {
+            return el.imdbID === movie.imdbID;
+          });
+
+          el.inFav = findFav !== undefined ? true : false;
+          movieArr.push(el);
+        });
+      }
+
       return movieArr;
     },
     changeTheme: function changeTheme() {
