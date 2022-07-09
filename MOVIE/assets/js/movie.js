@@ -34,7 +34,7 @@ const App = {
     };
   },
   created() {
-    this.favorites = JSON.parse(localStorage.getItem("favorites list"));
+    this.favorites = JSON.parse(localStorage.getItem("favorites list")) || [];
   },
   components: {
     movieItem,
@@ -50,6 +50,23 @@ const App = {
         axios
           .get(
             `https://www.omdbapi.com/?apikey=${this.API_KEY}&s=${this.search}&y=${this.year}&type=${this.movieType}&page=${this.page}`
+          )
+          .then((response) => {
+            this.totalPages = Math.ceil(response.data.totalResults / 10);
+            this.movieList = response.data.Search;
+          })
+          .catch(function (error) {
+            // handle error
+            console.log(error);
+          })
+          .then(function () {
+            // always executed
+          });
+      } else if (this.search !== "") {
+        // Make a request for a user with a given ID
+        axios
+          .get(
+            `https://www.omdbapi.com/?apikey=${this.API_KEY}&s=${this.search}&page=${this.page}`
           )
           .then((response) => {
             this.totalPages = Math.ceil(response.data.totalResults / 10);
@@ -84,23 +101,6 @@ const App = {
         axios
           .get(
             `https://www.omdbapi.com/?apikey=${this.API_KEY}&s=${this.search}&type=${this.movieType}&page=${this.page}`
-          )
-          .then((response) => {
-            this.totalPages = Math.ceil(response.data.totalResults / 10);
-            this.movieList = response.data.Search;
-          })
-          .catch(function (error) {
-            // handle error
-            console.log(error);
-          })
-          .then(function () {
-            // always executed
-          });
-      } else if (this.search !== "") {
-        // Make a request for a user with a given ID
-        axios
-          .get(
-            `https://www.omdbapi.com/?apikey=${this.API_KEY}&s=${this.search}&page=${this.page}`
           )
           .then((response) => {
             this.totalPages = Math.ceil(response.data.totalResults / 10);

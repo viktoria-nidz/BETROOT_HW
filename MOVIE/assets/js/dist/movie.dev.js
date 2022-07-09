@@ -35,7 +35,7 @@ var App = {
     };
   },
   created: function created() {
-    this.favorites = JSON.parse(localStorage.getItem("favorites list"));
+    this.favorites = JSON.parse(localStorage.getItem("favorites list")) || [];
   },
   components: {
     movieItem: movieItem
@@ -47,6 +47,16 @@ var App = {
       if (this.search !== "" && this.year !== "" && this.movieType !== "Choose type") {
         // Make a request for a user with a given ID
         axios.get("https://www.omdbapi.com/?apikey=".concat(this.API_KEY, "&s=").concat(this.search, "&y=").concat(this.year, "&type=").concat(this.movieType, "&page=").concat(this.page)).then(function (response) {
+          _this.totalPages = Math.ceil(response.data.totalResults / 10);
+          _this.movieList = response.data.Search;
+        })["catch"](function (error) {
+          // handle error
+          console.log(error);
+        }).then(function () {// always executed
+        });
+      } else if (this.search !== "") {
+        // Make a request for a user with a given ID
+        axios.get("https://www.omdbapi.com/?apikey=".concat(this.API_KEY, "&s=").concat(this.search, "&page=").concat(this.page)).then(function (response) {
           _this.totalPages = Math.ceil(response.data.totalResults / 10);
           _this.movieList = response.data.Search;
         })["catch"](function (error) {
@@ -67,16 +77,6 @@ var App = {
       } else if (this.search !== "" && this.movieType !== "Choose type") {
         // Make a request for a user with a given ID
         axios.get("https://www.omdbapi.com/?apikey=".concat(this.API_KEY, "&s=").concat(this.search, "&type=").concat(this.movieType, "&page=").concat(this.page)).then(function (response) {
-          _this.totalPages = Math.ceil(response.data.totalResults / 10);
-          _this.movieList = response.data.Search;
-        })["catch"](function (error) {
-          // handle error
-          console.log(error);
-        }).then(function () {// always executed
-        });
-      } else if (this.search !== "") {
-        // Make a request for a user with a given ID
-        axios.get("https://www.omdbapi.com/?apikey=".concat(this.API_KEY, "&s=").concat(this.search, "&page=").concat(this.page)).then(function (response) {
           _this.totalPages = Math.ceil(response.data.totalResults / 10);
           _this.movieList = response.data.Search;
         })["catch"](function (error) {
